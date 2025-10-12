@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="957.913" tests="32" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="24"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\D\Edges For Training\Project-1\AutomationExerciseWebsiteProject\target\test-classes;D:\D\Edges For Training\Project-1\AutomationExerciseWebsiteProject\target\classes;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-java\4.34.0\selenium-java-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-api\4.34.0\selenium-api-4.34.0.jar;C:\Users\Reem\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.34.0\selenium-chrome-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.34.0\selenium-chromium-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-json\4.34.0\selenium-json-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.34.0\selenium-manager-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v136\4.34.0\selenium-devtools-v136-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v137\4.34.0\selenium-devtools-v137-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v138\4.34.0\selenium-devtools-v138-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.34.0\selenium-edge-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.34.0\selenium-firefox-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-http\4.34.0\selenium-http-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.34.0\selenium-ie-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.34.0\selenium-remote-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\com\google\guava\guava\33.4.8-jre\guava-33.4.8-jre.jar;C:\Users\Reem\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\Reem\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Reem\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-api\1.51.0\opentelemetry-api-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-context\1.51.0\opentelemetry-context-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.51.0\opentelemetry-exporter-logging-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.51.0\opentelemetry-sdk-common-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.51.0\opentelemetry-sdk-extension-autoconfigure-spi-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.51.0\opentelemetry-sdk-extension-autoconfigure-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.51.0\opentelemetry-sdk-trace-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.51.0\opentelemetry-sdk-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.51.0\opentelemetry-sdk-metrics-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.51.0\opentelemetry-sdk-logs-1.51.0.jar;C:\Users\Reem\.m2\repository\net\bytebuddy\byte-buddy\1.17.6\byte-buddy-1.17.6.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-os\4.34.0\selenium-os-4.34.0.jar;C:\Users\Reem\.m2\repository\org\apache\commons\commons-exec\1.5.0\commons-exec-1.5.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.34.0\selenium-safari-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-support\4.34.0\selenium-support-4.34.0.jar;C:\Users\Reem\.m2\repository\org\testng\testng\7.11.0\testng-7.11.0.jar;C:\Users\Reem\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\Reem\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\Reem\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Reem\.m2\repository\com\google\code\gson\gson\2.13.1\gson-2.13.1.jar;C:\Users\Reem\.m2\repository\com\google\errorprone\error_prone_annotations\2.38.0\error_prone_annotations-2.38.0.jar;C:\Users\Reem\.m2\repository\io\qameta\allure\allure-testng\2.24.0\allure-testng-2.24.0.jar;C:\Users\Reem\.m2\repository\io\qameta\allure\allure-java-commons\2.24.0\allure-java-commons-2.24.0.jar;C:\Users\Reem\.m2\repository\io\qameta\allure\allure-model\2.24.0\allure-model-2.24.0.jar;C:\Users\Reem\.m2\repository\io\qameta\allure\allure-test-filter\2.24.0\allure-test-filter-2.24.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Africa/Cairo"/>
+    <property name="user.country.format" value="EG"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="24"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="D:\Programs\Java\jdk-24\bin"/>
+    <property name="sun.java.command" value="C:\Users\Reem\AppData\Local\Temp\surefire6507521227714539676\surefirebooter-20250927201355711_3.jar C:\Users\Reem\AppData\Local\Temp\surefire6507521227714539676 ????-??-??T??-??-??_???-jvmRun1 surefire-20250927201355711_1tmp surefire_0-20250927201355711_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\D\Edges For Training\Project-1\AutomationExerciseWebsiteProject\target\test-classes;D:\D\Edges For Training\Project-1\AutomationExerciseWebsiteProject\target\classes;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-java\4.34.0\selenium-java-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-api\4.34.0\selenium-api-4.34.0.jar;C:\Users\Reem\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.34.0\selenium-chrome-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.34.0\selenium-chromium-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-json\4.34.0\selenium-json-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.34.0\selenium-manager-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v136\4.34.0\selenium-devtools-v136-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v137\4.34.0\selenium-devtools-v137-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v138\4.34.0\selenium-devtools-v138-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.34.0\selenium-edge-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.34.0\selenium-firefox-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-http\4.34.0\selenium-http-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.34.0\selenium-ie-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.34.0\selenium-remote-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\com\google\guava\guava\33.4.8-jre\guava-33.4.8-jre.jar;C:\Users\Reem\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\Reem\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Reem\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-api\1.51.0\opentelemetry-api-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-context\1.51.0\opentelemetry-context-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.51.0\opentelemetry-exporter-logging-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.51.0\opentelemetry-sdk-common-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.51.0\opentelemetry-sdk-extension-autoconfigure-spi-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.51.0\opentelemetry-sdk-extension-autoconfigure-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.51.0\opentelemetry-sdk-trace-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.51.0\opentelemetry-sdk-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.51.0\opentelemetry-sdk-metrics-1.51.0.jar;C:\Users\Reem\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.51.0\opentelemetry-sdk-logs-1.51.0.jar;C:\Users\Reem\.m2\repository\net\bytebuddy\byte-buddy\1.17.6\byte-buddy-1.17.6.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-os\4.34.0\selenium-os-4.34.0.jar;C:\Users\Reem\.m2\repository\org\apache\commons\commons-exec\1.5.0\commons-exec-1.5.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.34.0\selenium-safari-driver-4.34.0.jar;C:\Users\Reem\.m2\repository\org\seleniumhq\selenium\selenium-support\4.34.0\selenium-support-4.34.0.jar;C:\Users\Reem\.m2\repository\org\testng\testng\7.11.0\testng-7.11.0.jar;C:\Users\Reem\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\Reem\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\Reem\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\Reem\.m2\repository\com\google\code\gson\gson\2.13.1\gson-2.13.1.jar;C:\Users\Reem\.m2\repository\com\google\errorprone\error_prone_annotations\2.38.0\error_prone_annotations-2.38.0.jar;C:\Users\Reem\.m2\repository\io\qameta\allure\allure-testng\2.24.0\allure-testng-2.24.0.jar;C:\Users\Reem\.m2\repository\io\qameta\allure\allure-java-commons\2.24.0\allure-java-commons-2.24.0.jar;C:\Users\Reem\.m2\repository\io\qameta\allure\allure-model\2.24.0\allure-model-2.24.0.jar;C:\Users\Reem\.m2\repository\io\qameta\allure\allure-test-filter\2.24.0\allure-test-filter-2.24.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Reem"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-04-15"/>
+    <property name="java.home" value="D:\Programs\Java\jdk-24"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\D\Edges For Training\Project-1\AutomationExerciseWebsiteProject"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Reem\AppData\Local\Temp\surefire6507521227714539676\surefirebooter-20250927201355711_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="24.0.1+9-30"/>
+    <property name="user.name" value="Reem"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Reem\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Reem\AppData\Local\Temp\"/>
+    <property name="java.version" value="24.0.1"/>
+    <property name="user.dir" value="D:\D\Edges For Training\Project-1\AutomationExerciseWebsiteProject"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.language.format" value="ar"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="D:\Programs\Java\jdk-24\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;D:\Programs\Node.js\;C:\ProgramData\chocolatey\bin;D:\Programs\Java\jdk-24\bin;D:\Programs\Git\cmd;D:\Programs\allure-2.35.1\allure-2.35.1\bin;D:\Programs\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;D:\Programs\Node.js\;C:\ProgramData\chocolatey\bin;D:\Programs\Java\jdk-24\bin;D:\Programs\Git\cmd;C:\Users\Reem\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\Reem\AppData\Local\Programs\Python\Python311\;C:\Users\Reem\AppData\Local\Microsoft\WindowsApps;D:\Programs\Microsoft VS Code\bin;C:\Users\Reem\AppData\Roaming\Python\Python313\Scripts;D:\Programs\mysys2\mingw64\bin;C:\Users\Reem\AppData\Local\GitHubDesktop\bin;C:\Users\Reem\AppData\Roaming\npm;D:\Programs\Node.js\;D:\Programs\cursor\resources\app\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="24.0.1+9-30"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="68.0"/>
+  </properties>
+  <testcase name="ViewAndCartBrandProducts_TC19" classname="TestCases.AllProductsPageTest" time="23.935">
+    <system-out><![CDATA[Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Clicked element: By.cssSelector: a[href="/products"]
+Scrolled to element: By.cssSelector: a[href="/brand_products/Biba"]
+Clicked element: By.cssSelector: a[href="/brand_products/Polo"]
+Got text from element By.cssSelector: div.features_items h2.title: BRAND - POLO PRODUCTS
+Scrolled to element: By.cssSelector: a[href="/brand_products/Biba"]
+Clicked element: By.cssSelector: a[href="/brand_products/H&M"]
+Got text from element By.cssSelector: div.features_items h2.title: BRAND - H&M PRODUCTS
+]]></system-out>
+    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+سبتمبر ٢٧, ٢٠٢٥ ٨:١٣:٥٩ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="searchProduct_TC9[Blue Top](1)" classname="TestCases.AllProductsPageTest" time="14.225">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/products"]
+Got text from element By.cssSelector: h2.title: ALL PRODUCTS
+Sent keys to element: By.cssSelector: input#search_product | Value: Blue Top
+Clicked element: By.cssSelector: button#submit_search
+Got text from element By.cssSelector: h2.title: SEARCHED PRODUCTS
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:١٤:٥٢ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="searchProduct_TC9[Winter Top](2)" classname="TestCases.AllProductsPageTest" time="13.336">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/products"]
+Got text from element By.cssSelector: h2.title: ALL PRODUCTS
+Sent keys to element: By.cssSelector: input#search_product | Value: Winter Top
+Clicked element: By.cssSelector: button#submit_search
+Got text from element By.cssSelector: h2.title: SEARCHED PRODUCTS
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:١٥:١٩ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="searchProduct_TC9[Summer White Top](3)" classname="TestCases.AllProductsPageTest" time="52.13">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/products"]
+Got text from element By.cssSelector: h2.title: ALL PRODUCTS
+Sent keys to element: By.cssSelector: input#search_product | Value: Summer White Top
+Clicked element: By.cssSelector: button#submit_search
+Got text from element By.cssSelector: h2.title: SEARCHED PRODUCTS
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:١٥:٤٢ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="AddToCartFromRecommendedItems_TC22" classname="TestCases.CartPageTest" time="3.366">
+    <system-out><![CDATA[Browser closed.
+Number of registered users loaded: 1
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Scrolled to element: By.cssSelector: div.recommended_items
+Got text from element By.cssSelector: div.recommended_items h2: RECOMMENDED ITEMS
+Scrolled to element: By.cssSelector: div.single-widget h2
+Clicked element: By.cssSelector: div.recommended_items a[data-product-id="5"]
+Clicked element: By.cssSelector: div.modal-dialog a[href="/view_cart"]
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:١٦:٤٩ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="addProductsInCart_TC12" classname="TestCases.CartPageTest" time="10.215">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/products"]
+Scrolled to element: By.cssSelector: img[src="/get_product_picture/4"]
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="1"]
+Clicked element: By.cssSelector: div.modal-dialog button.btn-success
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="2"]
+Clicked element: By.cssSelector: div.modal-dialog a[href="/view_cart"]
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:١٧:٢٠ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="removeProductsFromCart_TC17" classname="TestCases.CartPageTest" time="21.314">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Scrolled to element: By.cssSelector: img[src="/get_product_picture/4"]
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="1"]
+Clicked element: By.cssSelector: div.modal-dialog button.btn-success
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="2"]
+Clicked element: By.cssSelector: div.modal-dialog button.btn-success
+Clicked element: By.cssSelector: ul.nav a[href="/view_cart"]
+Got text from element By.cssSelector: div.breadcrumbs li:nth-of-type(2): Shopping Cart
+Clicked element: By.cssSelector: a.cart_quantity_delete[data-product-id="1"]
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:١٧:٤٦ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="searchProductsAndVerifyCartAfterLogin_TC20[Helper.RegisteredUser@38e00b47](1)" classname="TestCases.CartPageTest" time="28.032">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Clicked element: By.cssSelector: a[href="/products"]
+Got text from element By.cssSelector: h2.title: ALL PRODUCTS
+Sent keys to element: By.cssSelector: input#search_product | Value: Blue Top
+Clicked element: By.cssSelector: button#submit_search
+Got text from element By.cssSelector: h2.title: SEARCHED PRODUCTS
+Scrolled to element: By.cssSelector: div.brands-name
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="1"]
+Clicked element: By.cssSelector: div.modal-dialog button.btn-success
+Clicked element: By.cssSelector: ul.nav a[href="/view_cart"]
+Scrolled to element: By.cssSelector: header div.container
+Clicked element: By.cssSelector: a.check_out
+Clicked element: By.cssSelector: div#checkoutModal a[href="/login"]
+Sent keys to element: By.cssSelector: input[data-qa='login-email'] | Value: ahmed-ahmed@gmail.com
+Sent keys to element: By.cssSelector: input[data-qa='login-password'] | Value: ahmedishere
+Clicked element: By.cssSelector: button[data-qa='login-button']
+Clicked element: By.cssSelector: ul.nav a[href="/view_cart"]
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:١٨:٢٧ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="verifyProductQuantityInCart_TC13" classname="TestCases.CartPageTest" time="56.15">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Scrolled to element: By.cssSelector: div.brands_products h2
+Clicked element: By.cssSelector: a[href="/product_details/1"]
+Clicked element: By.cssSelector: button.cart
+Clicked element: By.cssSelector: div.modal-body a[href="/view_cart"]
+Got text from element By.cssSelector: button.disabled: 4
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:١٩:١٢ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="verifySubscriptionInCartPage_TC11" classname="TestCases.CartPageTest" time="2.194">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: ul.nav a[href="/view_cart"]
+Scrolled to element: By.cssSelector: footer#footer div.footer-widget
+Got text from element By.cssSelector: div.single-widget h2: SUBSCRIPTION
+Sent keys to element: By.cssSelector: input#susbscribe_email | Value: reemadel@gmail.com
+Clicked element: By.cssSelector: button#subscribe
+Got text from element By.cssSelector: div.alert-success : You have been successfully subscribed!
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٠:٢٣ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="verifyAddressDetailsInCheckoutPage_TC23[Helper.FullUserData@178dc733](1)" classname="TestCases.CheckoutPageTest" time="29.551">
+    <system-out><![CDATA[Browser closed.
+Number of users loaded: 1
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/login"]
+Sent keys to element: By.cssSelector: input[data-qa="signup-name"] | Value: John Doe
+Sent keys to element: By.cssSelector: input[data-qa="signup-email"] | Value: johndoe7513@gmail.com
+Clicked element: By.cssSelector: button[data-qa="signup-button"]
+Selected radio button: By.cssSelector: input#id_gender1
+Sent keys to element: By.cssSelector: input#name | Value: John Doe
+Scrolled to element: By.cssSelector: input#address2
+Sent keys to element: By.cssSelector: input#password | Value: SecurePass123!
+Selected dropdown by visible text: 15
+Selected dropdown by visible text: May
+Selected dropdown by visible text: 1990
+Checked checkbox: By.cssSelector: input#newsletter
+Checked checkbox: By.cssSelector: input#optin
+Sent keys to element: By.cssSelector: input#first_name | Value: John
+Sent keys to element: By.cssSelector: input#last_name | Value: Doe
+Scrolled to element: By.cssSelector: button[data-qa="create-account"]
+Sent keys to element: By.cssSelector: input#company | Value: Tech Solutions Ltd.
+Sent keys to element: By.cssSelector: input#address1 | Value: 123 Main Street
+Sent keys to element: By.cssSelector: input#address2 | Value: Apartment 4B
+Selected dropdown by visible text: United States
+Sent keys to element: By.cssSelector: input#state | Value: California
+Sent keys to element: By.cssSelector: input#city | Value: Los Angeles
+Scrolled to element: By.cssSelector: div.col-sm-3.col-sm-offset-1 p
+Sent keys to element: By.cssSelector: input#zipcode | Value: 90001
+Sent keys to element: By.cssSelector: input#mobile_number | Value: +1-555-123-4567
+Clicked element: By.cssSelector: button[data-qa="create-account"]
+Got text from element By.cssSelector: h2.title b: ACCOUNT CREATED!
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+Explicit wait finished for: By.xpath: //*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a
+Logged in as John Doe
+Scrolled to element: By.cssSelector: img[src="/get_product_picture/4"]
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="1"]
+Clicked element: By.cssSelector: div.modal-dialog button.btn-success
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="2"]
+Clicked element: By.cssSelector: div.modal-dialog a[href="/view_cart"]
+Got text from element By.cssSelector: div.breadcrumbs li:nth-of-type(2): Shopping Cart
+Clicked element: By.cssSelector: a.check_out
+Got text from element By.cssSelector: ul#address_delivery li.address_firstname : Mr. John Doe
+Got text from element By.cssSelector: ul#address_delivery li:nth-of-type(4): 123 Main Street
+Got text from element By.cssSelector: ul#address_delivery li:nth-of-type(5): Apartment 4B
+Got text from element By.cssSelector: ul#address_delivery li.address_city : Los Angeles California 90001
+Got text from element By.cssSelector: ul#address_delivery li.address_country_name : United States
+Got text from element By.cssSelector: ul#address_delivery li.address_phone: +1-555-123-4567
+Got text from element By.cssSelector: ul#address_invoice li.address_firstname: Mr. John Doe
+Got text from element By.cssSelector: ul#address_invoice li:nth-of-type(4): 123 Main Street
+Got text from element By.cssSelector: ul#address_invoice li:nth-of-type(5): Apartment 4B
+Got text from element By.cssSelector: ul#address_invoice li.address_city : Los Angeles California 90001
+Got text from element By.cssSelector: ul#address_invoice li.address_country_name: United States
+Got text from element By.cssSelector: ul#address_invoice li.address_phone: +1-555-123-4567
+Clicked element: By.cssSelector: a[href = "/delete_account"]
+Got text from element By.cssSelector: [data-qa="account-deleted"]: ACCOUNT DELETED!
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٠:٣٣ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="downloadInvoiceAfterPurchaseOrder_TC24[Helper.FullUserData@178dc733](1)" classname="TestCases.CheckoutPageTest" time="42.7">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Scrolled to element: By.cssSelector: img[src="/get_product_picture/4"]
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="1"]
+Clicked element: By.cssSelector: div.modal-dialog button.btn-success
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="2"]
+Clicked element: By.cssSelector: div.modal-dialog a[href="/view_cart"]
+Got text from element By.cssSelector: div.breadcrumbs li:nth-of-type(2): Shopping Cart
+Clicked element: By.cssSelector: a.check_out
+Clicked element: By.cssSelector: div#checkoutModal a[href="/login"]
+Sent keys to element: By.cssSelector: input[data-qa="signup-name"] | Value: John Doe
+Sent keys to element: By.cssSelector: input[data-qa="signup-email"] | Value: johndoe7513@gmail.com
+Clicked element: By.cssSelector: button[data-qa="signup-button"]
+Selected radio button: By.cssSelector: input#id_gender1
+Sent keys to element: By.cssSelector: input#name | Value: John Doe
+Scrolled to element: By.cssSelector: input#address2
+Sent keys to element: By.cssSelector: input#password | Value: SecurePass123!
+Selected dropdown by visible text: 15
+Selected dropdown by visible text: May
+Selected dropdown by visible text: 1990
+Checked checkbox: By.cssSelector: input#newsletter
+Checked checkbox: By.cssSelector: input#optin
+Sent keys to element: By.cssSelector: input#first_name | Value: John
+Sent keys to element: By.cssSelector: input#last_name | Value: Doe
+Scrolled to element: By.cssSelector: button[data-qa="create-account"]
+Sent keys to element: By.cssSelector: input#company | Value: Tech Solutions Ltd.
+Sent keys to element: By.cssSelector: input#address1 | Value: 123 Main Street
+Sent keys to element: By.cssSelector: input#address2 | Value: Apartment 4B
+Selected dropdown by visible text: United States
+Sent keys to element: By.cssSelector: input#state | Value: California
+Sent keys to element: By.cssSelector: input#city | Value: Los Angeles
+Scrolled to element: By.cssSelector: div.col-sm-3.col-sm-offset-1 p
+Sent keys to element: By.cssSelector: input#zipcode | Value: 90001
+Sent keys to element: By.cssSelector: input#mobile_number | Value: +1-555-123-4567
+Clicked element: By.cssSelector: button[data-qa="create-account"]
+Got text from element By.cssSelector: h2.title b: ACCOUNT CREATED!
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+Explicit wait finished for: By.xpath: //*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a
+Logged in as John Doe
+Clicked element: By.cssSelector: ul.nav a[href="/view_cart"]
+Clicked element: By.cssSelector: a.check_out
+Got text from element By.cssSelector: ul#address_delivery li.address_firstname : Mr. John Doe
+Got text from element By.cssSelector: ul#address_delivery li:nth-of-type(4): 123 Main Street
+Got text from element By.cssSelector: ul#address_delivery li:nth-of-type(5): Apartment 4B
+Got text from element By.cssSelector: ul#address_delivery li.address_city : Los Angeles California 90001
+Got text from element By.cssSelector: ul#address_delivery li.address_country_name : United States
+Got text from element By.cssSelector: ul#address_delivery li.address_phone: +1-555-123-4567
+Got text from element By.cssSelector: ul#address_invoice li.address_firstname: Mr. John Doe
+Got text from element By.cssSelector: ul#address_invoice li:nth-of-type(4): 123 Main Street
+Got text from element By.cssSelector: ul#address_invoice li:nth-of-type(5): Apartment 4B
+Got text from element By.cssSelector: ul#address_invoice li.address_city : Los Angeles California 90001
+Got text from element By.cssSelector: ul#address_invoice li.address_country_name: United States
+Got text from element By.cssSelector: ul#address_invoice li.address_phone: +1-555-123-4567
+Scrolled to element: By.cssSelector: textarea[name="message"]
+Sent keys to element: By.cssSelector: textarea[name="message"] | Value: Leave at my door
+Scrolled to element: By.cssSelector: div.single-widget h2
+Clicked element: By.cssSelector: a[href="/payment"]
+Scrolled to element: By.cssSelector: footer div.footer-bottom
+Sent keys to element: By.cssSelector: input[data-qa="name-on-card"] | Value: John Doe
+Sent keys to element: By.cssSelector: input[data-qa="card-number"] | Value: 4111111111111111
+Sent keys to element: By.cssSelector: input[data-qa="cvc"] | Value: 123
+Sent keys to element: By.cssSelector: input[data-qa="expiry-month"] | Value: 12
+Sent keys to element: By.cssSelector: input[data-qa="expiry-year"] | Value: 2027
+Clicked element: By.cssSelector: button.submit-button
+Got text from element By.cssSelector: h2.title b: ORDER PLACED!
+Clicked element: By.cssSelector: a.check_out
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+Clicked element: By.cssSelector: a[href = "/delete_account"]
+Got text from element By.cssSelector: [data-qa="account-deleted"]: ACCOUNT DELETED!
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢١:١١ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="placeOrderRegisterBeforeCheckout_TC15[Helper.FullUserData@178dc733](1)" classname="TestCases.CheckoutPageTest" time="35.173">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/login"]
+Sent keys to element: By.cssSelector: input[data-qa="signup-name"] | Value: John Doe
+Sent keys to element: By.cssSelector: input[data-qa="signup-email"] | Value: johndoe7513@gmail.com
+Clicked element: By.cssSelector: button[data-qa="signup-button"]
+Implicit wait set to 15 seconds.
+Selected radio button: By.cssSelector: input#id_gender1
+Sent keys to element: By.cssSelector: input#name | Value: John Doe
+Scrolled to element: By.cssSelector: input#address2
+Sent keys to element: By.cssSelector: input#password | Value: SecurePass123!
+Selected dropdown by visible text: 15
+Selected dropdown by visible text: May
+Selected dropdown by visible text: 1990
+Checked checkbox: By.cssSelector: input#newsletter
+Checked checkbox: By.cssSelector: input#optin
+Sent keys to element: By.cssSelector: input#first_name | Value: John
+Sent keys to element: By.cssSelector: input#last_name | Value: Doe
+Scrolled to element: By.cssSelector: button[data-qa="create-account"]
+Sent keys to element: By.cssSelector: input#company | Value: Tech Solutions Ltd.
+Sent keys to element: By.cssSelector: input#address1 | Value: 123 Main Street
+Sent keys to element: By.cssSelector: input#address2 | Value: Apartment 4B
+Selected dropdown by visible text: United States
+Sent keys to element: By.cssSelector: input#state | Value: California
+Sent keys to element: By.cssSelector: input#city | Value: Los Angeles
+Scrolled to element: By.cssSelector: div.col-sm-3.col-sm-offset-1 p
+Sent keys to element: By.cssSelector: input#zipcode | Value: 90001
+Sent keys to element: By.cssSelector: input#mobile_number | Value: +1-555-123-4567
+Clicked element: By.cssSelector: button[data-qa="create-account"]
+Got text from element By.cssSelector: h2.title b: ACCOUNT CREATED!
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+Explicit wait finished for: By.xpath: //*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a
+Logged in as John Doe
+Scrolled to element: By.cssSelector: img[src="/get_product_picture/4"]
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="1"]
+Clicked element: By.cssSelector: div.modal-dialog button.btn-success
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="2"]
+Clicked element: By.cssSelector: div.modal-dialog a[href="/view_cart"]
+Got text from element By.cssSelector: div.breadcrumbs li:nth-of-type(2): Shopping Cart
+Clicked element: By.cssSelector: a.check_out
+Got text from element By.cssSelector: ul#address_delivery li.address_firstname : Mr. John Doe
+Got text from element By.cssSelector: ul#address_delivery li:nth-of-type(4): 123 Main Street
+Got text from element By.cssSelector: ul#address_delivery li:nth-of-type(5): Apartment 4B
+Got text from element By.cssSelector: ul#address_delivery li.address_city : Los Angeles California 90001
+Got text from element By.cssSelector: ul#address_delivery li.address_country_name : United States
+Got text from element By.cssSelector: ul#address_delivery li.address_phone: +1-555-123-4567
+Got text from element By.cssSelector: ul#address_invoice li.address_firstname: Mr. John Doe
+Got text from element By.cssSelector: ul#address_invoice li:nth-of-type(4): 123 Main Street
+Got text from element By.cssSelector: ul#address_invoice li:nth-of-type(5): Apartment 4B
+Got text from element By.cssSelector: ul#address_invoice li.address_city : Los Angeles California 90001
+Got text from element By.cssSelector: ul#address_invoice li.address_country_name: United States
+Got text from element By.cssSelector: ul#address_invoice li.address_phone: +1-555-123-4567
+Scrolled to element: By.cssSelector: textarea[name="message"]
+Sent keys to element: By.cssSelector: textarea[name="message"] | Value: Leave at my door
+Scrolled to element: By.cssSelector: div.single-widget h2
+Clicked element: By.cssSelector: a[href="/payment"]
+Scrolled to element: By.cssSelector: footer div.footer-bottom
+Sent keys to element: By.cssSelector: input[data-qa="name-on-card"] | Value: John Doe
+Sent keys to element: By.cssSelector: input[data-qa="card-number"] | Value: 4111111111111111
+Sent keys to element: By.cssSelector: input[data-qa="cvc"] | Value: 123
+Sent keys to element: By.cssSelector: input[data-qa="expiry-month"] | Value: 12
+Sent keys to element: By.cssSelector: input[data-qa="expiry-year"] | Value: 2027
+Clicked element: By.cssSelector: button.submit-button
+Got text from element By.cssSelector: h2.title b: ORDER PLACED!
+Clicked element: By.cssSelector: a[href = "/delete_account"]
+Got text from element By.cssSelector: [data-qa="account-deleted"]: ACCOUNT DELETED!
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٢:٠٨ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="placeOrderRegisterWhileCheckout_TC14[Helper.FullUserData@178dc733](1)" classname="TestCases.CheckoutPageTest" time="35.424">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Scrolled to element: By.cssSelector: img[src="/get_product_picture/4"]
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="1"]
+Clicked element: By.cssSelector: div.modal-dialog button.btn-success
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="2"]
+Clicked element: By.cssSelector: div.modal-dialog a[href="/view_cart"]
+Got text from element By.cssSelector: div.breadcrumbs li:nth-of-type(2): Shopping Cart
+Clicked element: By.cssSelector: a[href="/login"]
+Sent keys to element: By.cssSelector: input[data-qa="signup-name"] | Value: John Doe
+Sent keys to element: By.cssSelector: input[data-qa="signup-email"] | Value: johndoe7513@gmail.com
+Clicked element: By.cssSelector: button[data-qa="signup-button"]
+Implicit wait set to 15 seconds.
+Selected radio button: By.cssSelector: input#id_gender1
+Sent keys to element: By.cssSelector: input#name | Value: John Doe
+Scrolled to element: By.cssSelector: input#address2
+Sent keys to element: By.cssSelector: input#password | Value: SecurePass123!
+Selected dropdown by visible text: 15
+Selected dropdown by visible text: May
+Selected dropdown by visible text: 1990
+Checked checkbox: By.cssSelector: input#newsletter
+Checked checkbox: By.cssSelector: input#optin
+Sent keys to element: By.cssSelector: input#first_name | Value: John
+Sent keys to element: By.cssSelector: input#last_name | Value: Doe
+Scrolled to element: By.cssSelector: button[data-qa="create-account"]
+Sent keys to element: By.cssSelector: input#company | Value: Tech Solutions Ltd.
+Sent keys to element: By.cssSelector: input#address1 | Value: 123 Main Street
+Sent keys to element: By.cssSelector: input#address2 | Value: Apartment 4B
+Selected dropdown by visible text: United States
+Sent keys to element: By.cssSelector: input#state | Value: California
+Sent keys to element: By.cssSelector: input#city | Value: Los Angeles
+Scrolled to element: By.cssSelector: div.col-sm-3.col-sm-offset-1 p
+Sent keys to element: By.cssSelector: input#zipcode | Value: 90001
+Sent keys to element: By.cssSelector: input#mobile_number | Value: +1-555-123-4567
+Clicked element: By.cssSelector: button[data-qa="create-account"]
+Got text from element By.cssSelector: h2.title b: ACCOUNT CREATED!
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+Explicit wait finished for: By.xpath: //*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a
+Logged in as John Doe
+Clicked element: By.cssSelector: ul.nav a[href="/view_cart"]
+Clicked element: By.cssSelector: a.check_out
+Got text from element By.cssSelector: ul#address_delivery li.address_firstname : Mr. John Doe
+Got text from element By.cssSelector: ul#address_delivery li:nth-of-type(4): 123 Main Street
+Got text from element By.cssSelector: ul#address_delivery li:nth-of-type(5): Apartment 4B
+Got text from element By.cssSelector: ul#address_delivery li.address_city : Los Angeles California 90001
+Got text from element By.cssSelector: ul#address_delivery li.address_country_name : United States
+Got text from element By.cssSelector: ul#address_delivery li.address_phone: +1-555-123-4567
+Got text from element By.cssSelector: ul#address_invoice li.address_firstname: Mr. John Doe
+Got text from element By.cssSelector: ul#address_invoice li:nth-of-type(4): 123 Main Street
+Got text from element By.cssSelector: ul#address_invoice li:nth-of-type(5): Apartment 4B
+Got text from element By.cssSelector: ul#address_invoice li.address_city : Los Angeles California 90001
+Got text from element By.cssSelector: ul#address_invoice li.address_country_name: United States
+Got text from element By.cssSelector: ul#address_invoice li.address_phone: +1-555-123-4567
+Scrolled to element: By.cssSelector: textarea[name="message"]
+Sent keys to element: By.cssSelector: textarea[name="message"] | Value: Leave at my door
+Scrolled to element: By.cssSelector: div.single-widget h2
+Clicked element: By.cssSelector: a[href="/payment"]
+Scrolled to element: By.cssSelector: footer div.footer-bottom
+Sent keys to element: By.cssSelector: input[data-qa="name-on-card"] | Value: John Doe
+Sent keys to element: By.cssSelector: input[data-qa="card-number"] | Value: 4111111111111111
+Sent keys to element: By.cssSelector: input[data-qa="cvc"] | Value: 123
+Sent keys to element: By.cssSelector: input[data-qa="expiry-month"] | Value: 12
+Sent keys to element: By.cssSelector: input[data-qa="expiry-year"] | Value: 2027
+Clicked element: By.cssSelector: button.submit-button
+Got text from element By.cssSelector: h2.title b: ORDER PLACED!
+Clicked element: By.cssSelector: a[href = "/delete_account"]
+Got text from element By.cssSelector: [data-qa="account-deleted"]: ACCOUNT DELETED!
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٢:٥٠ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="registerUser[Helper.FullUserData@178dc733](1)" classname="TestCases.CheckoutPageTest" time="17.46">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Clicked element: By.cssSelector: a[href="/login"]
+Sent keys to element: By.cssSelector: input[data-qa="signup-name"] | Value: John Doe
+Sent keys to element: By.cssSelector: input[data-qa="signup-email"] | Value: johndoe7513@gmail.com
+Clicked element: By.cssSelector: button[data-qa="signup-button"]
+Got text from element By.cssSelector: h2.title  b: ENTER ACCOUNT INFORMATION
+Implicit wait set to 15 seconds.
+Selected radio button: By.cssSelector: input#id_gender1
+Sent keys to element: By.cssSelector: input#name | Value: John Doe
+Scrolled to element: By.cssSelector: input#address2
+Sent keys to element: By.cssSelector: input#password | Value: SecurePass123!
+Selected dropdown by visible text: 15
+Selected dropdown by visible text: May
+Selected dropdown by visible text: 1990
+Checked checkbox: By.cssSelector: input#newsletter
+Checked checkbox: By.cssSelector: input#optin
+Sent keys to element: By.cssSelector: input#first_name | Value: John
+Sent keys to element: By.cssSelector: input#last_name | Value: Doe
+Scrolled to element: By.cssSelector: button[data-qa="create-account"]
+Sent keys to element: By.cssSelector: input#company | Value: Tech Solutions Ltd.
+Sent keys to element: By.cssSelector: input#address1 | Value: 123 Main Street
+Sent keys to element: By.cssSelector: input#address2 | Value: Apartment 4B
+Selected dropdown by visible text: United States
+Sent keys to element: By.cssSelector: input#state | Value: California
+Sent keys to element: By.cssSelector: input#city | Value: Los Angeles
+Scrolled to element: By.cssSelector: div.col-sm-3.col-sm-offset-1 p
+Sent keys to element: By.cssSelector: input#zipcode | Value: 90001
+Sent keys to element: By.cssSelector: input#mobile_number | Value: +1-555-123-4567
+Clicked element: By.cssSelector: button[data-qa="create-account"]
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+Explicit wait finished for: By.xpath: //*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a
+Logged in as John Doe
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٣:٣٢ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="placeOrderLoginBeforeCheckout_TC16[Helper.FullUserData@178dc733](1)" classname="TestCases.CheckoutPageTest" time="30.814">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/login"]
+Sent keys to element: By.cssSelector: input[data-qa='login-email'] | Value: johndoe7513@gmail.com
+Sent keys to element: By.cssSelector: input[data-qa='login-password'] | Value: SecurePass123!
+Clicked element: By.cssSelector: button[data-qa='login-button']
+Explicit wait finished for: By.xpath: //*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a
+Logged in as John Doe
+Scrolled to element: By.cssSelector: img[src="/get_product_picture/4"]
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="1"]
+Clicked element: By.cssSelector: div.modal-dialog button.btn-success
+Clicked element: By.cssSelector: div.product-overlay a[data-product-id="2"]
+Clicked element: By.cssSelector: div.modal-dialog a[href="/view_cart"]
+Got text from element By.cssSelector: div.breadcrumbs li:nth-of-type(2): Shopping Cart
+Clicked element: By.cssSelector: a.check_out
+Got text from element By.cssSelector: ul#address_delivery li.address_firstname : Mr. John Doe
+Got text from element By.cssSelector: ul#address_delivery li:nth-of-type(4): 123 Main Street
+Got text from element By.cssSelector: ul#address_delivery li:nth-of-type(5): Apartment 4B
+Got text from element By.cssSelector: ul#address_delivery li.address_city : Los Angeles California 90001
+Got text from element By.cssSelector: ul#address_delivery li.address_country_name : United States
+Got text from element By.cssSelector: ul#address_delivery li.address_phone: +1-555-123-4567
+Got text from element By.cssSelector: ul#address_invoice li.address_firstname: Mr. John Doe
+Got text from element By.cssSelector: ul#address_invoice li:nth-of-type(4): 123 Main Street
+Got text from element By.cssSelector: ul#address_invoice li:nth-of-type(5): Apartment 4B
+Got text from element By.cssSelector: ul#address_invoice li.address_city : Los Angeles California 90001
+Got text from element By.cssSelector: ul#address_invoice li.address_country_name: United States
+Got text from element By.cssSelector: ul#address_invoice li.address_phone: +1-555-123-4567
+Scrolled to element: By.cssSelector: textarea[name="message"]
+Sent keys to element: By.cssSelector: textarea[name="message"] | Value: Leave at my door
+Scrolled to element: By.cssSelector: div.single-widget h2
+Clicked element: By.cssSelector: a[href="/payment"]
+Scrolled to element: By.cssSelector: footer div.footer-bottom
+Sent keys to element: By.cssSelector: input[data-qa="name-on-card"] | Value: John Doe
+Sent keys to element: By.cssSelector: input[data-qa="card-number"] | Value: 4111111111111111
+Sent keys to element: By.cssSelector: input[data-qa="cvc"] | Value: 123
+Sent keys to element: By.cssSelector: input[data-qa="expiry-month"] | Value: 12
+Sent keys to element: By.cssSelector: input[data-qa="expiry-year"] | Value: 2027
+Clicked element: By.cssSelector: button.submit-button
+Got text from element By.cssSelector: h2.title b: ORDER PLACED!
+Clicked element: By.cssSelector: a[href = "/delete_account"]
+Got text from element By.cssSelector: [data-qa="account-deleted"]: ACCOUNT DELETED!
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٣:٥٨ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="contactUsForm_TC6[Helper.ContactUsForm@3818609f](1)" classname="TestCases.ContactUsFormTest" time="12.766">
+    <system-out><![CDATA[Browser closed.
+Number of contact us form data loaded: 1
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/contact_us"]
+Got text from element By.cssSelector: div.contact-form h2.title : GET IN TOUCH
+Sent keys to element: By.cssSelector: input[data-qa="name"] | Value: Reem Adel
+Sent keys to element: By.cssSelector: input[data-qa="email"] | Value: reem.adel@gmail.com
+Sent keys to element: By.cssSelector: input[data-qa="subject"] | Value: Issue with my order
+Sent keys to element: By.cssSelector: textarea[data-qa="message"] | Value: Hello, I placed an order last week and haven't received any update. Could you please check and confirm?
+Scrolled to element: By.cssSelector: footer div.footer-bottom
+Clicked element: By.cssSelector: input[data-qa="submit-button"]
+Alert accepted.
+Got text from element By.cssSelector: div.status: Success! Your details have been submitted successfully.
+Clicked element: By.cssSelector: div#form-section a[href="/"]
+Page title: Automation Exercise
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٤:٣٧ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="scrollWithArrow_TC25" classname="TestCases.HomePageTest" time="0.571">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Scrolled to element: By.cssSelector: p.pull-left
+Got text from element By.cssSelector: div.single-widget h2: SUBSCRIPTION
+Clicked element: By.cssSelector: a#scrollUp
+Got text from element By.cssSelector: div.col-sm-6 h2: Full-Fledged practice website for Automation Engineers
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٤:٥٧ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="scrollWithoutArrow_TC26" classname="TestCases.HomePageTest" time="0.748">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Scrolled to element: By.cssSelector: p.pull-left
+Got text from element By.cssSelector: div.single-widget h2: SUBSCRIPTION
+Scrolled to element: By.cssSelector: ul.nav a[href="/"]
+Got text from element By.cssSelector: div.col-sm-6 h2: Full-Fledged practice website for Automation Engineers
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٥:٠٦ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="verifySubscriptionInHomePage_TC10" classname="TestCases.HomePageTest" time="0.64">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Scrolled to element: By.cssSelector: p.pull-left
+Got text from element By.cssSelector: div.single-widget h2: SUBSCRIPTION
+Sent keys to element: By.cssSelector: input#susbscribe_email | Value: reemadel@gmail.com
+Clicked element: By.cssSelector: button#subscribe
+Got text from element By.cssSelector: div.alert-success : You have been successfully subscribed!
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٥:١٥ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="viewCategoryProducts_TC18" classname="TestCases.HomePageTest" time="7.389">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Scrolled to element: By.cssSelector: a[href="/product_details/1"]
+Clicked element: By.cssSelector: a[href="#Women"]
+Clicked element: By.cssSelector: div#Women div.panel-body ul li a[href="/category_products/1"]
+Page title: Automation Exercise - Dress Products
+Got text from element By.cssSelector: div.features_items h2.title : WOMEN - DRESS PRODUCTS
+Clicked element: By.cssSelector: a[href="#Men"]
+Clicked element: By.cssSelector: div#Men div.panel-body ul li a[href="/category_products/3"]
+Page title: Automation Exercise - Tshirts Products
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٥:٢٣ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="incorrectLogin_TC3[Helper.User@92a584f](1)" classname="TestCases.LoginLogoutTest" time="5.03">
+    <system-out><![CDATA[Browser closed.
+Number of invalid users loaded: 3
+Number of users loaded: 1
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/login"]
+Got text from element By.cssSelector: div.login-form > h2: Login to your account
+Sent keys to element: By.cssSelector: input[data-qa='login-email'] | Value: tomsmitha@gmail.com
+Sent keys to element: By.cssSelector: input[data-qa='login-password'] | Value: SuperSecretPassword!
+Clicked element: By.cssSelector: button[data-qa='login-button']
+Got text from element By.cssSelector: div.login-form form p: Your email or password is incorrect!
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٥:٣٨ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="incorrectLogin_TC3[Helper.User@644a12be](2)" classname="TestCases.LoginLogoutTest" time="3.115">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/login"]
+Got text from element By.cssSelector: div.login-form > h2: Login to your account
+Sent keys to element: By.cssSelector: input[data-qa='login-email'] | Value: tom@gmail.com
+Sent keys to element: By.cssSelector: input[data-qa='login-password'] | Value: SuperSecretPassword!
+Clicked element: By.cssSelector: button[data-qa='login-button']
+Got text from element By.cssSelector: div.login-form form p: Your email or password is incorrect!
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٥:٥٣ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="incorrectLogin_TC3[Helper.User@7152ee36](3)" classname="TestCases.LoginLogoutTest" time="2.852">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/login"]
+Got text from element By.cssSelector: div.login-form > h2: Login to your account
+Sent keys to element: By.cssSelector: input[data-qa='login-email'] | Value: admin@gmail.com
+Sent keys to element: By.cssSelector: input[data-qa='login-password'] | Value: SuperSecretPassword!
+Clicked element: By.cssSelector: button[data-qa='login-button']
+Got text from element By.cssSelector: div.login-form form p: Your email or password is incorrect!
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٦:٠٤ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="registerUser[Helper.FullUserData@eb8d539](1)" classname="TestCases.LoginLogoutTest" time="17.817">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Clicked element: By.cssSelector: a[href="/login"]
+Sent keys to element: By.cssSelector: input[data-qa="signup-name"] | Value: John Doe
+Sent keys to element: By.cssSelector: input[data-qa="signup-email"] | Value: johndoe7513@gmail.com
+Clicked element: By.cssSelector: button[data-qa="signup-button"]
+Got text from element By.cssSelector: h2.title  b: ENTER ACCOUNT INFORMATION
+Implicit wait set to 15 seconds.
+Selected radio button: By.cssSelector: input#id_gender1
+Sent keys to element: By.cssSelector: input#name | Value: John Doe
+Scrolled to element: By.cssSelector: input#address2
+Sent keys to element: By.cssSelector: input#password | Value: SecurePass123!
+Selected dropdown by visible text: 15
+Selected dropdown by visible text: May
+Selected dropdown by visible text: 1990
+Checked checkbox: By.cssSelector: input#newsletter
+Checked checkbox: By.cssSelector: input#optin
+Sent keys to element: By.cssSelector: input#first_name | Value: John
+Sent keys to element: By.cssSelector: input#last_name | Value: Doe
+Scrolled to element: By.cssSelector: button[data-qa="create-account"]
+Sent keys to element: By.cssSelector: input#company | Value: Tech Solutions Ltd.
+Sent keys to element: By.cssSelector: input#address1 | Value: 123 Main Street
+Sent keys to element: By.cssSelector: input#address2 | Value: Apartment 4B
+Selected dropdown by visible text: United States
+Sent keys to element: By.cssSelector: input#state | Value: California
+Sent keys to element: By.cssSelector: input#city | Value: Los Angeles
+Scrolled to element: By.cssSelector: div.col-sm-3.col-sm-offset-1 p
+Sent keys to element: By.cssSelector: input#zipcode | Value: 90001
+Sent keys to element: By.cssSelector: input#mobile_number | Value: +1-555-123-4567
+Clicked element: By.cssSelector: button[data-qa="create-account"]
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+Explicit wait finished for: By.xpath: //*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a
+Logged in as John Doe
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٦:٢٠ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="logout_TC4[Helper.FullUserData@eb8d539](1)" classname="TestCases.LoginLogoutTest" time="18.724">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/login"]
+Got text from element By.cssSelector: div.login-form > h2: Login to your account
+Sent keys to element: By.cssSelector: input[data-qa='login-email'] | Value: johndoe7513@gmail.com
+Sent keys to element: By.cssSelector: input[data-qa='login-password'] | Value: SecurePass123!
+Clicked element: By.cssSelector: button[data-qa='login-button']
+Logged in as 
+Explicit wait finished for: By.xpath: //*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a
+Logged in as John Doe
+Logged in as John Doe
+Clicked element: By.cssSelector: a[href="/logout"]
+Got text from element By.cssSelector: div.login-form > h2: Login to your account
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٦:٤٦ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="correctLogin_TC2[Helper.FullUserData@eb8d539](1)" classname="TestCases.LoginLogoutTest" time="29.92">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/login"]
+Got text from element By.cssSelector: div.login-form > h2: Login to your account
+Sent keys to element: By.cssSelector: input[data-qa='login-email'] | Value: johndoe7513@gmail.com
+Sent keys to element: By.cssSelector: input[data-qa='login-password'] | Value: SecurePass123!
+Clicked element: By.cssSelector: button[data-qa='login-button']
+Logged in as 
+Explicit wait finished for: By.xpath: //*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a
+Logged in as John Doe
+Logged in as John Doe
+Clicked element: By.cssSelector: a[href = "/delete_account"]
+Got text from element By.cssSelector: [data-qa="account-deleted"]: ACCOUNT DELETED!
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٧:٢٣ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="addReviewOnProduct_TC21[Helper.Reviews@79442196](1)" classname="TestCases.ProductPageTest" time="11.371">
+    <system-out><![CDATA[Browser closed.
+Number of reviews loaded: 1
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Clicked element: By.cssSelector: a[href="/products"]
+Got text from element By.cssSelector: h2.title: ALL PRODUCTS
+Scrolled to element: By.cssSelector: a[href="/brand_products/Biba"]
+View Product
+Got text from element By.cssSelector: a[href="#reviews"]: WRITE YOUR REVIEW
+Sent keys to element: By.cssSelector: input#name | Value: Reem
+Sent keys to element: By.cssSelector: input#email | Value: reemadel@gmail.com
+Sent keys to element: By.cssSelector: textarea#review | Value: This product is good.
+Clicked element: By.cssSelector: button#button-review
+Got text from element By.cssSelector: div#review-section div.alert-success: Thank you for your review.
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٨:١٨ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="verifyProductsAndProductDetailPage_TC8" classname="TestCases.ProductPageTest" time="11.358">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/products"]
+Got text from element By.cssSelector: h2.title: ALL PRODUCTS
+Scrolled to element: By.cssSelector: a[href="/brand_products/Biba"]
+View Product
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٨:٤٠ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="registerUserWithExistingEmail_TC5[Helper.RegisteredUser@60b201c](1)" classname="TestCases.RegisterTest" time="3.559">
+    <system-out><![CDATA[Browser closed.
+Number of users loaded: 1
+Number of registered users loaded: 1
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/login"]
+Got text from element By.cssSelector: div.signup-form h2: New User Signup!
+Sent keys to element: By.cssSelector: input[data-qa="signup-name"] | Value: ahmed
+Sent keys to element: By.cssSelector: input[data-qa="signup-email"] | Value: ahmed-ahmed@gmail.com
+Clicked element: By.cssSelector: button[data-qa="signup-button"]
+Got text from element By.cssSelector: form[action="/signup"]  p: Email Address already exist!
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٨:٥٩ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="registerUser_TC1[Helper.FullUserData@2a25dd06](1)" classname="TestCases.RegisterTest" time="19.158">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: a[href="/login"]
+Got text from element By.cssSelector: div.signup-form h2: New User Signup!
+Sent keys to element: By.cssSelector: input[data-qa="signup-name"] | Value: John Doe
+Sent keys to element: By.cssSelector: input[data-qa="signup-email"] | Value: johndoe7513@gmail.com
+Clicked element: By.cssSelector: button[data-qa="signup-button"]
+Got text from element By.cssSelector: h2.title  b: ENTER ACCOUNT INFORMATION
+Selected radio button: By.cssSelector: input#id_gender1
+Sent keys to element: By.cssSelector: input#name | Value: John Doe
+Scrolled to element: By.cssSelector: input#address2
+Sent keys to element: By.cssSelector: input#password | Value: SecurePass123!
+Selected dropdown by visible text: 15
+Selected dropdown by visible text: May
+Selected dropdown by visible text: 1990
+Checked checkbox: By.cssSelector: input#newsletter
+Checked checkbox: By.cssSelector: input#optin
+Sent keys to element: By.cssSelector: input#first_name | Value: John
+Sent keys to element: By.cssSelector: input#last_name | Value: Doe
+Scrolled to element: By.cssSelector: button[data-qa="create-account"]
+Sent keys to element: By.cssSelector: input#company | Value: Tech Solutions Ltd.
+Sent keys to element: By.cssSelector: input#address1 | Value: 123 Main Street
+Sent keys to element: By.cssSelector: input#address2 | Value: Apartment 4B
+Selected dropdown by visible text: United States
+Sent keys to element: By.cssSelector: input#state | Value: California
+Sent keys to element: By.cssSelector: input#city | Value: Los Angeles
+Scrolled to element: By.cssSelector: div.col-sm-3.col-sm-offset-1 p
+Sent keys to element: By.cssSelector: input#zipcode | Value: 90001
+Sent keys to element: By.cssSelector: input#mobile_number | Value: +1-555-123-4567
+Clicked element: By.cssSelector: button[data-qa="create-account"]
+Got text from element By.cssSelector: h2.title b: ACCOUNT CREATED!
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+Explicit wait finished for: By.xpath: //*[@id="header"]/div/div/div/div[2]/div/ul/li[10]/a
+Logged in as John Doe
+Clicked element: By.cssSelector: a[href = "/delete_account"]
+Got text from element By.cssSelector: [data-qa="account-deleted"]: ACCOUNT DELETED!
+Clicked element: By.cssSelector: a[data-qa="continue-button"]
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٩:١٥ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+  <testcase name="verifyTestCasesPage_TC7" classname="TestCases.TestCasesPageTest" time="2.469">
+    <system-out><![CDATA[Browser closed.
+Browser initialized and maximized with download dir: D:\D\Edges For Training\Project-1\Downloads
+Navigated to URL: https://automationexercise.com/
+Page title: Automation Exercise
+Clicked element: By.cssSelector: ul.nav a[href="/test_cases"]
+Got text from element By.cssSelector: h2.title: TEST CASES
+]]></system-out>
+    <system-err><![CDATA[سبتمبر ٢٧, ٢٠٢٥ ٨:٢٩:٤٣ م org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version ١٤٠, returning the closest version; found: ١٣٨; Please update to a Selenium version that supports CDP version ١٤٠
+]]></system-err>
+  </testcase>
+</testsuite>

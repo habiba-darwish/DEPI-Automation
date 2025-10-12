@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="32" passed="32" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٣:٥٧ EEST" name="AllTestsSuite" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٥٤ EEST" duration-ms="956309">
+    <groups>
+    </groups>
+    <test started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٣:٥٧ EEST" name="AllTests" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٥٤ EEST" duration-ms="956309">
+      <class name="TestCases.RegisterTest">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:TestCases.RegisterTest@4bee18dc]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٥٩ EEST" name="beforeClass" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٥٩ EEST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.RegisterTest@4bee18dc]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٥٩ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:١٠ EEST" duration-ms="11494" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="registerUserWithExistingEmail_TC5(Helper.RegisteredUser)[pri:0, instance:TestCases.RegisterTest@4bee18dc]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:١٠ EEST" name="registerUserWithExistingEmail_TC5" data-provider="registeredUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:١٤ EEST" duration-ms="3557" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.RegisteredUser@60b201c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerUserWithExistingEmail_TC5 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.RegisterTest@4bee18dc]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:١٤ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:١٤ EEST" duration-ms="154" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.RegisterTest@4bee18dc]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:١٤ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٢٢ EEST" duration-ms="8718" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="registerUser_TC1(Helper.FullUserData)[pri:0, instance:TestCases.RegisterTest@4bee18dc]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٢٢ EEST" name="registerUser_TC1" data-provider="registerUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٤٢ EEST" duration-ms="19159" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.FullUserData@2a25dd06]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerUser_TC1 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.RegisterTest@4bee18dc]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٤٢ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٤٢ EEST" duration-ms="158" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- TestCases.RegisterTest -->
+      <class name="TestCases.CheckoutPageTest">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٣٢ EEST" name="beforeClass" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٣٢ EEST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٣٢ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٤٠ EEST" duration-ms="8090" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyAddressDetailsInCheckoutPage_TC23(Helper.FullUserData)[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٤٠ EEST" name="verifyAddressDetailsInCheckoutPage_TC23" data-provider="fullUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢١:١٠ EEST" duration-ms="29549" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.FullUserData@178dc733]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddressDetailsInCheckoutPage_TC23 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢١:١٠ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢١:١٠ EEST" duration-ms="168" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢١:١٠ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢١:٢٤ EEST" duration-ms="13958" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="downloadInvoiceAfterPurchaseOrder_TC24(Helper.FullUserData)[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢١:٢٤ EEST" name="downloadInvoiceAfterPurchaseOrder_TC24" data-provider="fullUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:٠٧ EEST" duration-ms="42699" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.FullUserData@178dc733]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- downloadInvoiceAfterPurchaseOrder_TC24 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:٠٧ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:٠٧ EEST" duration-ms="190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:٠٧ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:١٤ EEST" duration-ms="7203" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="placeOrderRegisterBeforeCheckout_TC15(Helper.FullUserData)[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:١٤ EEST" name="placeOrderRegisterBeforeCheckout_TC15" data-provider="fullUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:٤٩ EEST" duration-ms="35170" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.FullUserData@178dc733]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrderRegisterBeforeCheckout_TC15 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:٤٩ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:٥٠ EEST" duration-ms="178" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:٥٠ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:٥٦ EEST" duration-ms="6326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="placeOrderRegisterWhileCheckout_TC14(Helper.FullUserData)[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٢:٥٦ EEST" name="placeOrderRegisterWhileCheckout_TC14" data-provider="fullUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٣:٣١ EEST" duration-ms="35424" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.FullUserData@178dc733]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrderRegisterWhileCheckout_TC14 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٣:٣١ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٣:٣١ EEST" duration-ms="209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٣:٣٢ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٣:٣٩ EEST" duration-ms="7858" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="registerUser(Helper.FullUserData)[pri:1, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٣:٣٩ EEST" name="registerUser" data-provider="fullUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٣:٥٧ EEST" duration-ms="17458" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.FullUserData@178dc733]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerUser -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٣:٥٧ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٣:٥٧ EEST" duration-ms="171" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٣:٥٧ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٠٥ EEST" duration-ms="7534" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="placeOrderLoginBeforeCheckout_TC16(Helper.FullUserData)[pri:1, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٠٥ EEST" name="placeOrderLoginBeforeCheckout_TC16" data-provider="fullUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٣٥ EEST" depends-on-methods="TestCases.CheckoutPageTest.registerUser" duration-ms="30803" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.FullUserData@178dc733]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- placeOrderLoginBeforeCheckout_TC16 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CheckoutPageTest@27f74733]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٣٥ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٣٦ EEST" duration-ms="232" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- TestCases.CheckoutPageTest -->
+      <class name="TestCases.AllProductsPageTest">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٣:٥٨ EEST" name="beforeClass" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٣:٥٨ EEST" duration-ms="121" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٣:٥٨ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٤:٢٧ EEST" duration-ms="29580" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="ViewAndCartBrandProducts_TC19()[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٤:٢٧ EEST" name="ViewAndCartBrandProducts_TC19" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٤:٥١ EEST" duration-ms="23922" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ViewAndCartBrandProducts_TC19 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٤:٥١ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٤:٥١ EEST" duration-ms="178" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٤:٥١ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:٠٣ EEST" duration-ms="11996" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="searchProduct_TC9(java.lang.String)[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:٠٣ EEST" name="searchProduct_TC9" data-provider="productData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:١٨ EEST" duration-ms="14223" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Blue Top]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProduct_TC9 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:١٨ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:١٨ EEST" duration-ms="133" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:١٨ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:٢٧ EEST" duration-ms="9404" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="searchProduct_TC9(java.lang.String)[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:٢٧ EEST" name="searchProduct_TC9" data-provider="productData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:٤١ EEST" duration-ms="13335" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Winter Top]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProduct_TC9 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:٤١ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:٤١ EEST" duration-ms="132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:٤١ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:٥٦ EEST" duration-ms="15339" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="searchProduct_TC9(java.lang.String)[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٥:٥٦ EEST" name="searchProduct_TC9" data-provider="productData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٦:٤٨ EEST" duration-ms="52128" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Summer White Top]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProduct_TC9 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.AllProductsPageTest@14151bc5]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٦:٤٨ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٦:٤٨ EEST" duration-ms="172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- TestCases.AllProductsPageTest -->
+      <class name="TestCases.LoginLogoutTest">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٣٧ EEST" name="beforeClass" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٣٧ EEST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٣٧ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٤٧ EEST" duration-ms="9162" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="incorrectLogin_TC3(Helper.User)[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٤٧ EEST" name="incorrectLogin_TC3" data-provider="invalidUsersData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٥٢ EEST" duration-ms="5028" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.User@92a584f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- incorrectLogin_TC3 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٥٢ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٥٢ EEST" duration-ms="171" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٥٢ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٥٩ EEST" duration-ms="7610" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="incorrectLogin_TC3(Helper.User)[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٥٩ EEST" name="incorrectLogin_TC3" data-provider="invalidUsersData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:٠٣ EEST" duration-ms="3112" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.User@644a12be]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- incorrectLogin_TC3 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:٠٣ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:٠٣ EEST" duration-ms="145" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:٠٣ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:١٦ EEST" duration-ms="13006" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="incorrectLogin_TC3(Helper.User)[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:١٦ EEST" name="incorrectLogin_TC3" data-provider="invalidUsersData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:١٩ EEST" duration-ms="2850" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.User@7152ee36]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- incorrectLogin_TC3 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:١٩ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:١٩ EEST" duration-ms="161" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:١٩ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:٢٧ EEST" duration-ms="8120" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="registerUser(Helper.FullUserData)[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:٢٧ EEST" name="registerUser" data-provider="registerUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:٤٥ EEST" duration-ms="17817" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.FullUserData@eb8d539]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerUser -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:٤٥ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:٤٥ EEST" duration-ms="198" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٦:٤٥ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٧:٠٣ EEST" duration-ms="18023" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="logout_TC4(Helper.FullUserData)[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٧:٠٣ EEST" name="logout_TC4" data-provider="registerUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٧:٢٢ EEST" depends-on-methods="TestCases.LoginLogoutTest.registerUser" duration-ms="18721" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.FullUserData@eb8d539]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout_TC4 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٧:٢٢ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٧:٢٢ EEST" duration-ms="143" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٧:٢٢ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٧:٤٧ EEST" duration-ms="25005" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="correctLogin_TC2(Helper.FullUserData)[pri:1, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٧:٤٧ EEST" name="correctLogin_TC2" data-provider="registerUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:١٧ EEST" duration-ms="29918" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.FullUserData@eb8d539]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- correctLogin_TC2 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.LoginLogoutTest@57fae983]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:١٧ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:١٧ EEST" duration-ms="151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- TestCases.LoginLogoutTest -->
+      <class name="TestCases.ContactUsFormTest">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:TestCases.ContactUsFormTest@7bef452c]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٣٦ EEST" name="beforeClass" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٣٦ EEST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.ContactUsFormTest@7bef452c]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٣٦ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٤٣ EEST" duration-ms="7753" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="contactUsForm_TC6(Helper.ContactUsForm)[pri:0, instance:TestCases.ContactUsFormTest@7bef452c]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٤٣ EEST" name="contactUsForm_TC6" data-provider="contactUsFormData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٥٦ EEST" duration-ms="12762" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.ContactUsForm@3818609f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- contactUsForm_TC6 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.ContactUsFormTest@7bef452c]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٥٦ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٥٦ EEST" duration-ms="339" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- TestCases.ContactUsFormTest -->
+      <class name="TestCases.TestCasesPageTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.TestCasesPageTest@44f3fe83]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٤٢ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٥١ EEST" duration-ms="9346" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyTestCasesPage_TC7()[pri:0, instance:TestCases.TestCasesPageTest@44f3fe83]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٥١ EEST" name="verifyTestCasesPage_TC7" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٥٤ EEST" duration-ms="2467" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTestCasesPage_TC7 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.TestCasesPageTest@44f3fe83]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٥٤ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٩:٥٤ EEST" duration-ms="175" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- TestCases.TestCasesPageTest -->
+      <class name="TestCases.HomePageTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٤:٥٦ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٠٤ EEST" duration-ms="7688" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="scrollWithArrow_TC25()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٠٤ EEST" name="scrollWithArrow_TC25" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٠٥ EEST" duration-ms="569" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scrollWithArrow_TC25 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٠٥ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٠٥ EEST" duration-ms="159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٠٥ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:١٣ EEST" duration-ms="8204" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="scrollWithoutArrow_TC26()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:١٣ EEST" name="scrollWithoutArrow_TC26" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:١٤ EEST" duration-ms="746" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scrollWithoutArrow_TC26 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:١٤ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:١٤ EEST" duration-ms="142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:١٤ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٢٢ EEST" duration-ms="7638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifySubscriptionInHomePage_TC10()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٢٢ EEST" name="verifySubscriptionInHomePage_TC10" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٢٢ EEST" duration-ms="638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySubscriptionInHomePage_TC10 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٢٢ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٢٢ EEST" duration-ms="131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٢٢ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٣٠ EEST" duration-ms="7548" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="viewCategoryProducts_TC18()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٣٠ EEST" name="viewCategoryProducts_TC18" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٣٧ EEST" duration-ms="7386" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- viewCategoryProducts_TC18 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.HomePageTest@4bb8855f]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٣٧ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٥:٣٧ EEST" duration-ms="174" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- TestCases.HomePageTest -->
+      <class name="TestCases.ProductPageTest">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:TestCases.ProductPageTest@4a29f290]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:١٧ EEST" name="beforeClass" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:١٧ EEST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.ProductPageTest@4a29f290]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:١٧ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٢٧ EEST" duration-ms="10350" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="addReviewOnProduct_TC21(Helper.Reviews)[pri:0, instance:TestCases.ProductPageTest@4a29f290]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٢٧ EEST" name="addReviewOnProduct_TC21" data-provider="reviewsData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٣٩ EEST" duration-ms="11369" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.Reviews@79442196]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addReviewOnProduct_TC21 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.ProductPageTest@4a29f290]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٣٩ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٣٩ EEST" duration-ms="320" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.ProductPageTest@4a29f290]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٣٩ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٤٧ EEST" duration-ms="7996" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyProductsAndProductDetailPage_TC8()[pri:0, instance:TestCases.ProductPageTest@4a29f290]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٤٧ EEST" name="verifyProductsAndProductDetailPage_TC8" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٥٨ EEST" duration-ms="11358" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductsAndProductDetailPage_TC8 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.ProductPageTest@4a29f290]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٥٨ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٨:٥٩ EEST" duration-ms="275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- TestCases.ProductPageTest -->
+      <class name="TestCases.CartPageTest">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٦:٤٨ EEST" name="beforeClass" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٦:٤٨ EEST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٦:٤٨ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:١٦ EEST" duration-ms="27219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="AddToCartFromRecommendedItems_TC22()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:١٦ EEST" name="AddToCartFromRecommendedItems_TC22" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:١٩ EEST" duration-ms="3365" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddToCartFromRecommendedItems_TC22 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:١٩ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:١٩ EEST" duration-ms="165" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:١٩ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:٣٥ EEST" duration-ms="16011" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="addProductsInCart_TC12()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:٣٥ EEST" name="addProductsInCart_TC12" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:٤٥ EEST" duration-ms="10215" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProductsInCart_TC12 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:٤٥ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:٤٦ EEST" duration-ms="177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٧:٤٦ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٨:٠٥ EEST" duration-ms="19538" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="removeProductsFromCart_TC17()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٨:٠٥ EEST" name="removeProductsFromCart_TC17" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٨:٢٦ EEST" duration-ms="21314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeProductsFromCart_TC17 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٨:٢٦ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٨:٢٧ EEST" duration-ms="157" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٨:٢٧ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٨:٤٣ EEST" duration-ms="16638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="searchProductsAndVerifyCartAfterLogin_TC20(Helper.RegisteredUser)[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٨:٤٣ EEST" name="searchProductsAndVerifyCartAfterLogin_TC20" data-provider="registeredUserData" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٩:١١ EEST" duration-ms="28033" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Helper.RegisteredUser@38e00b47]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchProductsAndVerifyCartAfterLogin_TC20 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٩:١١ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٩:١٢ EEST" duration-ms="361" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٩:١٢ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:١٩:٢٦ EEST" duration-ms="14822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyProductQuantityInCart_TC13()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:١٩:٢٦ EEST" name="verifyProductQuantityInCart_TC13" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٢٣ EEST" duration-ms="56149" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductQuantityInCart_TC13 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٢٣ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٢٣ EEST" duration-ms="156" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٢٣ EEST" name="beforeMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٣٠ EEST" duration-ms="7309" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifySubscriptionInCartPage_TC11()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٣٠ EEST" name="verifySubscriptionInCartPage_TC11" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٣٢ EEST" duration-ms="2194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySubscriptionInCartPage_TC11 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestCases.CartPageTest@76954a33]" started-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٣٢ EEST" name="afterMethod" finished-at="٢٠٢٥-٠٩-٢٧T٢٠:٢٠:٣٢ EEST" duration-ms="117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- TestCases.CartPageTest -->
+    </test> <!-- AllTests -->
+  </suite> <!-- AllTestsSuite -->
+</testng-results>

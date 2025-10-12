@@ -1,0 +1,240 @@
+<html>
+<head>
+<title>TestNG:  AllTests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>AllTests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>32/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sat Sep 27 20:13:57 EEST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>956 seconds (956309 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestCases.LoginLogoutTest.incorrectLogin_TC3()'><b>incorrectLogin_TC3</b><br>Test class: TestCases.LoginLogoutTest<br>Parameters: Helper.User@92a584f</td>
+<td></td>
+<td>5</td>
+<td>TestCases.LoginLogoutTest@57fae983</td></tr>
+<tr>
+<td title='TestCases.CartPageTest.verifyProductQuantityInCart_TC13()'><b>verifyProductQuantityInCart_TC13</b><br>Test class: TestCases.CartPageTest</td>
+<td></td>
+<td>56</td>
+<td>TestCases.CartPageTest@76954a33</td></tr>
+<tr>
+<td title='TestCases.ContactUsFormTest.contactUsForm_TC6()'><b>contactUsForm_TC6</b><br>Test class: TestCases.ContactUsFormTest<br>Parameters: Helper.ContactUsForm@3818609f</td>
+<td></td>
+<td>12</td>
+<td>TestCases.ContactUsFormTest@7bef452c</td></tr>
+<tr>
+<td title='TestCases.AllProductsPageTest.searchProduct_TC9()'><b>searchProduct_TC9</b><br>Test class: TestCases.AllProductsPageTest<br>Parameters: Blue Top</td>
+<td></td>
+<td>14</td>
+<td>TestCases.AllProductsPageTest@14151bc5</td></tr>
+<tr>
+<td title='TestCases.TestCasesPageTest.verifyTestCasesPage_TC7()'><b>verifyTestCasesPage_TC7</b><br>Test class: TestCases.TestCasesPageTest</td>
+<td></td>
+<td>2</td>
+<td>TestCases.TestCasesPageTest@44f3fe83</td></tr>
+<tr>
+<td title='TestCases.CartPageTest.removeProductsFromCart_TC17()'><b>removeProductsFromCart_TC17</b><br>Test class: TestCases.CartPageTest</td>
+<td></td>
+<td>21</td>
+<td>TestCases.CartPageTest@76954a33</td></tr>
+<tr>
+<td title='TestCases.LoginLogoutTest.incorrectLogin_TC3()'><b>incorrectLogin_TC3</b><br>Test class: TestCases.LoginLogoutTest<br>Parameters: Helper.User@7152ee36</td>
+<td></td>
+<td>2</td>
+<td>TestCases.LoginLogoutTest@57fae983</td></tr>
+<tr>
+<td title='TestCases.RegisterTest.registerUser_TC1()'><b>registerUser_TC1</b><br>Test class: TestCases.RegisterTest<br>Parameters: Helper.FullUserData@2a25dd06</td>
+<td></td>
+<td>19</td>
+<td>TestCases.RegisterTest@4bee18dc</td></tr>
+<tr>
+<td title='TestCases.HomePageTest.scrollWithoutArrow_TC26()'><b>scrollWithoutArrow_TC26</b><br>Test class: TestCases.HomePageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCases.HomePageTest@4bb8855f</td></tr>
+<tr>
+<td title='TestCases.ProductPageTest.verifyProductsAndProductDetailPage_TC8()'><b>verifyProductsAndProductDetailPage_TC8</b><br>Test class: TestCases.ProductPageTest</td>
+<td></td>
+<td>11</td>
+<td>TestCases.ProductPageTest@4a29f290</td></tr>
+<tr>
+<td title='TestCases.CartPageTest.verifySubscriptionInCartPage_TC11()'><b>verifySubscriptionInCartPage_TC11</b><br>Test class: TestCases.CartPageTest</td>
+<td></td>
+<td>2</td>
+<td>TestCases.CartPageTest@76954a33</td></tr>
+<tr>
+<td title='TestCases.CartPageTest.addProductsInCart_TC12()'><b>addProductsInCart_TC12</b><br>Test class: TestCases.CartPageTest</td>
+<td></td>
+<td>10</td>
+<td>TestCases.CartPageTest@76954a33</td></tr>
+<tr>
+<td title='TestCases.CheckoutPageTest.registerUser()'><b>registerUser</b><br>Test class: TestCases.CheckoutPageTest<br>Parameters: Helper.FullUserData@178dc733</td>
+<td></td>
+<td>17</td>
+<td>TestCases.CheckoutPageTest@27f74733</td></tr>
+<tr>
+<td title='TestCases.LoginLogoutTest.registerUser()'><b>registerUser</b><br>Test class: TestCases.LoginLogoutTest<br>Parameters: Helper.FullUserData@eb8d539</td>
+<td></td>
+<td>17</td>
+<td>TestCases.LoginLogoutTest@57fae983</td></tr>
+<tr>
+<td title='TestCases.CheckoutPageTest.downloadInvoiceAfterPurchaseOrder_TC24()'><b>downloadInvoiceAfterPurchaseOrder_TC24</b><br>Test class: TestCases.CheckoutPageTest<br>Parameters: Helper.FullUserData@178dc733</td>
+<td></td>
+<td>42</td>
+<td>TestCases.CheckoutPageTest@27f74733</td></tr>
+<tr>
+<td title='TestCases.LoginLogoutTest.incorrectLogin_TC3()'><b>incorrectLogin_TC3</b><br>Test class: TestCases.LoginLogoutTest<br>Parameters: Helper.User@644a12be</td>
+<td></td>
+<td>3</td>
+<td>TestCases.LoginLogoutTest@57fae983</td></tr>
+<tr>
+<td title='TestCases.AllProductsPageTest.searchProduct_TC9()'><b>searchProduct_TC9</b><br>Test class: TestCases.AllProductsPageTest<br>Parameters: Summer White Top</td>
+<td></td>
+<td>52</td>
+<td>TestCases.AllProductsPageTest@14151bc5</td></tr>
+<tr>
+<td title='TestCases.CartPageTest.searchProductsAndVerifyCartAfterLogin_TC20()'><b>searchProductsAndVerifyCartAfterLogin_TC20</b><br>Test class: TestCases.CartPageTest<br>Parameters: Helper.RegisteredUser@38e00b47</td>
+<td></td>
+<td>28</td>
+<td>TestCases.CartPageTest@76954a33</td></tr>
+<tr>
+<td title='TestCases.AllProductsPageTest.searchProduct_TC9()'><b>searchProduct_TC9</b><br>Test class: TestCases.AllProductsPageTest<br>Parameters: Winter Top</td>
+<td></td>
+<td>13</td>
+<td>TestCases.AllProductsPageTest@14151bc5</td></tr>
+<tr>
+<td title='TestCases.CheckoutPageTest.placeOrderRegisterWhileCheckout_TC14()'><b>placeOrderRegisterWhileCheckout_TC14</b><br>Test class: TestCases.CheckoutPageTest<br>Parameters: Helper.FullUserData@178dc733</td>
+<td></td>
+<td>35</td>
+<td>TestCases.CheckoutPageTest@27f74733</td></tr>
+<tr>
+<td title='TestCases.LoginLogoutTest.correctLogin_TC2()'><b>correctLogin_TC2</b><br>Test class: TestCases.LoginLogoutTest<br>Parameters: Helper.FullUserData@eb8d539</td>
+<td></td>
+<td>29</td>
+<td>TestCases.LoginLogoutTest@57fae983</td></tr>
+<tr>
+<td title='TestCases.CheckoutPageTest.placeOrderLoginBeforeCheckout_TC16()'><b>placeOrderLoginBeforeCheckout_TC16</b><br>Test class: TestCases.CheckoutPageTest<br>Parameters: Helper.FullUserData@178dc733</td>
+<td></td>
+<td>30</td>
+<td>TestCases.CheckoutPageTest@27f74733</td></tr>
+<tr>
+<td title='TestCases.HomePageTest.scrollWithArrow_TC25()'><b>scrollWithArrow_TC25</b><br>Test class: TestCases.HomePageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCases.HomePageTest@4bb8855f</td></tr>
+<tr>
+<td title='TestCases.RegisterTest.registerUserWithExistingEmail_TC5()'><b>registerUserWithExistingEmail_TC5</b><br>Test class: TestCases.RegisterTest<br>Parameters: Helper.RegisteredUser@60b201c</td>
+<td></td>
+<td>3</td>
+<td>TestCases.RegisterTest@4bee18dc</td></tr>
+<tr>
+<td title='TestCases.CartPageTest.AddToCartFromRecommendedItems_TC22()'><b>AddToCartFromRecommendedItems_TC22</b><br>Test class: TestCases.CartPageTest</td>
+<td></td>
+<td>3</td>
+<td>TestCases.CartPageTest@76954a33</td></tr>
+<tr>
+<td title='TestCases.LoginLogoutTest.logout_TC4()'><b>logout_TC4</b><br>Test class: TestCases.LoginLogoutTest<br>Parameters: Helper.FullUserData@eb8d539</td>
+<td></td>
+<td>18</td>
+<td>TestCases.LoginLogoutTest@57fae983</td></tr>
+<tr>
+<td title='TestCases.HomePageTest.verifySubscriptionInHomePage_TC10()'><b>verifySubscriptionInHomePage_TC10</b><br>Test class: TestCases.HomePageTest</td>
+<td></td>
+<td>0</td>
+<td>TestCases.HomePageTest@4bb8855f</td></tr>
+<tr>
+<td title='TestCases.AllProductsPageTest.ViewAndCartBrandProducts_TC19()'><b>ViewAndCartBrandProducts_TC19</b><br>Test class: TestCases.AllProductsPageTest</td>
+<td></td>
+<td>23</td>
+<td>TestCases.AllProductsPageTest@14151bc5</td></tr>
+<tr>
+<td title='TestCases.CheckoutPageTest.verifyAddressDetailsInCheckoutPage_TC23()'><b>verifyAddressDetailsInCheckoutPage_TC23</b><br>Test class: TestCases.CheckoutPageTest<br>Parameters: Helper.FullUserData@178dc733</td>
+<td></td>
+<td>29</td>
+<td>TestCases.CheckoutPageTest@27f74733</td></tr>
+<tr>
+<td title='TestCases.ProductPageTest.addReviewOnProduct_TC21()'><b>addReviewOnProduct_TC21</b><br>Test class: TestCases.ProductPageTest<br>Parameters: Helper.Reviews@79442196</td>
+<td></td>
+<td>11</td>
+<td>TestCases.ProductPageTest@4a29f290</td></tr>
+<tr>
+<td title='TestCases.HomePageTest.viewCategoryProducts_TC18()'><b>viewCategoryProducts_TC18</b><br>Test class: TestCases.HomePageTest</td>
+<td></td>
+<td>7</td>
+<td>TestCases.HomePageTest@4bb8855f</td></tr>
+<tr>
+<td title='TestCases.CheckoutPageTest.placeOrderRegisterBeforeCheckout_TC15()'><b>placeOrderRegisterBeforeCheckout_TC15</b><br>Test class: TestCases.CheckoutPageTest<br>Parameters: Helper.FullUserData@178dc733</td>
+<td></td>
+<td>35</td>
+<td>TestCases.CheckoutPageTest@27f74733</td></tr>
+</table><p>
+</body>
+</html>
