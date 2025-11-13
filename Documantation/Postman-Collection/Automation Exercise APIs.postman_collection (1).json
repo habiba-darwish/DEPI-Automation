@@ -1,0 +1,427 @@
+{
+	"info": {
+		"_postman_id": "ac93df0a-1608-437f-8912-37b888830ca6",
+		"name": "Automation Exercise APIs",
+		"description": "This Postman collection includes a set of APIs from the **Automation Exercise** website, which is commonly used for learning and practicing API testing.\n\nThe collection is organized into different sections to make testing easier, including:\n\n- **User Authentication:** Register, login, and logout users\n    \n- **User Details:** Retrieve and update user information\n    \n- **Products & Categories:** Get product lists, details, and categories\n    \n- **Cart & Orders:** Add products to the cart, place orders, and check order details\n    \n- **Contact & Feedback:** Send contact messages and test response handling\n    \n\nEach request includes the correct **HTTP method**, **URL**, and sample **parameters** or **body data** to help you practice making real API calls.\n\nThis collection is designed for **students, testers, and beginners** who want to understand how REST APIs work and how to use **Postman** for API testing and automation practice.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38955490"
+	},
+	"item": [
+		{
+			"name": "All Products List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"\r",
+							"// Verify HTTP status\r",
+							"pm.test(\"HTTP status is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Verify internal response code\r",
+							"pm.test(\"Response code is 200 inside body\", () => {\r",
+							"    pm.expect(res.responseCode).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"// Verify products exist\r",
+							"pm.test(\"Products list exists\", () => {\r",
+							"    pm.expect(res).to.have.property(\"products\");\r",
+							"    pm.expect(res.products.length).to.be.above(0);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/productsList",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"productsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit All Products List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"\r",
+							"// Always returns 200 OK, check body code\r",
+							"pm.test(\"Response code inside body is 405\", () => {\r",
+							"    pm.expect(res.responseCode).to.eql(405);\r",
+							"});\r",
+							"\r",
+							"// Verify error message\r",
+							"pm.test(\"Unsupported method message\", () => {\r",
+							"    pm.expect(res.message).to.include(\"not supported\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/productsList",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"productsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Brands List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"HTTP status is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response code inside body is 200\", () => {\r",
+							"    pm.expect(res.responseCode).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Brands list exists\", () => {\r",
+							"    pm.expect(res).to.have.property(\"brands\");\r",
+							"    pm.expect(res.brands.length).to.be.above(0);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/brandsList",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"brandsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit All Brands List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Response code inside body is 405\", () => {\r",
+							"    pm.expect(res.responseCode).to.eql(405);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Unsupported method message\", () => {\r",
+							"    pm.expect(res.message).to.include(\"not supported\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/brandsList",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"brandsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Response code inside body is 200\", () => {\r",
+							"    pm.expect(res.responseCode).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Searched products returned\", () => {\r",
+							"    pm.expect(res).to.have.property(\"products\");\r",
+							"    pm.expect(res.products.length).to.be.above(0);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_product",
+							"value": "top",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/searchProduct",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"searchProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Product Without Parameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Response code inside body is 400\", () => {\r",
+							"    pm.expect(res.responseCode).to.eql(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Missing parameter message\", () => {\r",
+							"    pm.expect(res.message).to.include(\"missing in POST request\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/searchProduct",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"searchProduct"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User Account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Response code inside body is 201\", () => {\r",
+							"    pm.expect(res.responseCode).to.eql(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"User creation message\", () => {\r",
+							"    pm.expect(res.message).to.include(\"User created\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "John Doe",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "johndoe19723@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "johnishere12345",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Mr",
+							"type": "text"
+						},
+						{
+							"key": "birth_date",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "birth_month",
+							"value": "January",
+							"type": "text"
+						},
+						{
+							"key": "birth_year",
+							"value": "1995",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "John",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "Doe",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "AMIT",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "123 Main St",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "Apt 4",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "United States",
+							"type": "text"
+						},
+						{
+							"key": "zipcode",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "NY",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "New York",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "1234567890",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/createAccount",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"createAccount"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

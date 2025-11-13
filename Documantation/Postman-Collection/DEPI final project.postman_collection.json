@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "c9b4e263-25ca-4bba-8daf-c655f89dd33d",
+		"name": "DEPI final project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48987465",
+		"_collection_link": "https://mennayasser-g7-8225318.postman.co/workspace/Menna-Yasser's-Workspace~604d732f-0bd7-40e8-8dcb-be2c40493025/collection/48987465-c9b4e263-25ca-4bba-8daf-c655f89dd33d?action=share&source=collection_link&creator=48987465"
+	},
+	"item": [
+		{
+			"name": "Put account",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Menna",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "menna2006@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234@pswrd",
+							"type": "text"
+						},
+						{
+							"key": "title ",
+							"value": "Mrs",
+							"type": "text"
+						},
+						{
+							"key": " birth_date",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "birth_month",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "birth_year",
+							"value": "2006",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "menna",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "yasser",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "old cairo",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "maadi",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "egypt",
+							"type": "text"
+						},
+						{
+							"key": "zipcode",
+							"value": "00",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "cairo",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "cairo",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "01151537823",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/updateAccount?",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"updateAccount"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 10000 ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "menna2006@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234@psword",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/deleteAccount?",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"deleteAccount"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "menna",
+							"disabled": true
+						},
+						{
+							"key": "Course",
+							"value": "API",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://automationexercise.com/api/getUserDetailByEmail?email=menna2006@gmail.com",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"getUserDetailByEmail"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "menna2006@gmail.com"
+						},
+						{
+							"key": "email",
+							"value": "remanoo2006@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login with valid details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "menna2006@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234@pswrd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/verifyLogin?email=menna2006@gmail.com& password=1234@pswrd",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"verifyLogin"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "menna2006@gmail.com"
+						},
+						{
+							"key": " password",
+							"value": "1234@pswrd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login without email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://automationexercise.com/api/verifyLogin?password=1234@pswrd",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"verifyLogin"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "1234@pswrd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete to verify login",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/verifyLogin",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"verifyLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login with invalid details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "menna2000@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234@pawswrd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://automationexercise.com/api/verifyLogin",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"verifyLogin"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
