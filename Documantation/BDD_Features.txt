@@ -1,0 +1,758 @@
+Feature: Automation Exercise and OpenCart Platform Testing
+  This feature covers end-to-end scenarios for the Automation Exercise website, API testing, 
+  and OpenCart database operations for both admin and customer sides.
+
+  Background:
+    Given the test environment is set up
+    And the necessary dependencies are configured
+
+  # ==================== Feature 1: Manual/UI Scenarios - User Registration & Sign Up ====================
+
+  Scenario: Successful User Registration with Valid Data
+    Given the user navigates to the Signup page
+    When the user enters valid Name "Syada" and Email "syada@gmail.com"
+    And clicks the Signup button
+    And fills all required fields on Account Information page with valid data
+      | Title | Mrs.           |
+      | Name  | Syada          |
+      | Email | syada@gmail.com|
+      | Password | 54123       |
+      | DOB   | 15.2.2005      |
+    And clicks Create Account button
+    Then the user should be registered successfully
+    And a confirmation message "ACCOUNT CREATED!" should be displayed
+
+  Scenario: Registration with Existing Email
+    Given the user navigates to the Signup page
+    When the user enters Name "Syada" and existing email "syadanabil7@gmail.com"
+    And clicks the Signup button
+    Then registration should fail
+    And error message "Email Address already exists!" should be displayed
+
+  Scenario: Missing Initial Mandatory Fields
+    Given the user is on the Signup page
+    When the user leaves Name and Email fields empty
+    And clicks the Signup button
+    Then the form should not be submitted
+    And validation errors should be displayed for both missing Name and Email
+
+  Scenario: Registration with Invalid Email Format
+    Given the user is on the Signup page
+    When the user enters Email in invalid format "sy23"
+    And fills Name correctly
+    And clicks the Signup button
+    Then error message "Invalid email format" should be displayed
+
+  Scenario: Verify Date of Birth Dropdown Functionality
+    Given the user is on the Account Information page
+    When the user selects Day "10", Month "Oct", and Year "2002" from dropdowns
+    And completes the form and clicks Create Account
+    Then the user can select valid DOB
+    And correct values should be stored
+    And the account should be created successfully
+
+  Scenario: Verify Newsletter Checkbox Functionality
+    Given the user is on the Account Information page
+    When the user selects the "Sign up for our newsletter!" checkbox
+    And completes the rest of the signup process
+    Then the Newsletter preference should be saved
+    And the user should be subscribed
+    And account should be created successfully
+
+  Scenario: Verify Receive Offers Checkbox Functionality
+    Given the user is on the Account Information page
+    When the user selects the "Receive special offers from partners!" checkbox
+    And completes the rest of the signup process
+    Then the Offer preference should be saved successfully
+    And the account should be created successfully
+
+  Scenario: Register Without First Name
+    Given the user has reached the Account Information page
+    When the user leaves "First Name" field empty
+    And fills other required fields
+    And clicks Create Account button
+    Then registration should fail
+    And validation error should be displayed for the missing First Name field
+
+  Scenario: Register Without Last Name
+    Given the user has reached the Account Information page
+    When the user leaves "Last Name" field empty
+    And fills other required fields
+    And clicks Create Account button
+    Then registration should fail
+    And validation error should be displayed for the missing Last Name field
+
+  Scenario: Register Without Address
+    Given the user has reached the Account Information page
+    When the user leaves "Address" field blank
+    And fills other required fields
+    And clicks Create Account button
+    Then registration should fail
+    And validation error should be displayed for the missing Address field
+
+  Scenario: Register Without State
+    Given the user has reached the Account Information page
+    When the user leaves "State" field blank
+    And fills other required fields
+    And clicks Create Account button
+    Then registration should fail
+    And validation error should be displayed for the missing State field
+
+  Scenario: Register Without City
+    Given the user has reached the Account Information page
+    When the user leaves "City" field empty
+    And fills other required fields
+    And clicks Create Account button
+    Then registration should fail
+    And validation error should be displayed for the missing City field
+
+  Scenario: Register Without Zipcode
+    Given the user has reached the Account Information page
+    When the user leaves "Zipcode" field empty
+    And fills other required fields
+    And clicks Create Account button
+    Then registration should fail
+    And validation error should be displayed for the missing Zipcode field
+
+  Scenario: Register Without Mobile Number
+    Given the user has reached the Account Information page
+    When the user leaves "Mobile Number" field empty
+    And fills other required fields
+    And clicks Create Account button
+    Then registration should fail
+    And validation error should be displayed for the missing Mobile Number field
+
+  Scenario: Register with Invalid Mobile Number Format
+    Given the user has reached the Account Information page
+    When the user enters an invalid mobile number "abcd123"
+    And fills other required fields
+    And clicks Create Account button
+    Then registration should fail
+    And validation error should be displayed for the invalid Mobile Number format
+
+  # ==================== Feature 2: Manual/UI Scenarios - Login & Logout ====================
+
+  Scenario: Successful Login with Valid Credentials
+    Given the user is on the Home page
+    When the user clicks "Signup / Login" button
+    And enters valid registered email and correct password
+    And clicks Login button
+    Then login should be successful
+    And the user should be redirected to the Home page
+    And "Logged in as [User Name]" should be displayed in the header
+
+  Scenario: Login with Incorrect Password
+    Given the user is on the Login page
+    When the user enters valid registered email and incorrect password
+    And clicks Login button
+    Then login should fail
+    And error message "Your email or password is incorrect" should be displayed
+
+  Scenario: Login with Unregistered Email
+    Given the user is on the Login page
+    When the user enters a non-existing email
+    And enters any password
+    And clicks Login button
+    Then login should fail
+    And error message "Your email or password is incorrect" should be displayed
+
+  Scenario: Login with Empty Fields
+    Given the user is on the Login page
+    When the user leaves both Email and Password fields blank
+    And clicks Login button
+    Then the form should not be submitted
+    And validation messages should be displayed prompting for missing input in both fields
+
+  Scenario: Login with Invalid Email Format
+    Given the user is on the Login page
+    When the user enters an invalid email format "user@invalid"
+    And enters a valid password
+    And clicks Login button
+    Then login should fail
+    And error message "Please include an '@' in the email address" should be displayed
+
+  Scenario: Successful User Logout via Header Link
+    Given the user is successfully logged in
+    And header shows "Logged in as..."
+    When the user locates and clicks the Logout link in the header navigation bar
+    Then the user should be successfully logged out
+    And redirected to the Login page
+
+  Scenario: Session Termination via Browser Back Button
+    Given the user is logged in
+    When the user navigates to the Home page
+    And clicks Logout
+    And clicks the browser Back button
+    Then the user should NOT be returned to the previous page
+    And should remain on the Login page or Home page
+
+  # ==================== Feature 3: Manual/UI Scenarios - Product Management ====================
+
+  Scenario: Verify All Products and Product Detail Page
+    Given the user is on the home page
+    When the user clicks "Products" button
+    Then the user should be navigated to ALL PRODUCTS page successfully
+    When the user clicks "View Product" for the first product
+    Then the user should be redirected to product detail page
+    And product details should be displayed including name, category, price, availability, condition, and brand
+
+  Scenario: Search Product
+    Given the user is on the Products page
+    When the user enters product name "Tshirt" in search input
+    And clicks search button
+    Then "SEARCHED PRODUCTS" should be visible
+    And search results should match the query
+
+  Scenario: View Category Products
+    Given the user is on the home page
+    When the user views left sidebar
+    And clicks "Women" category
+    And selects a subcategory "Dress"
+    Then the page title should match selected category
+    And correct products should appear for selected category
+    When the user switches to "Men" category
+    Then correct men products should be displayed
+    When the user checks "Kids - Dress" and "Kids - Tops & Shirts" categories
+    Then only related kids products should appear
+
+  Scenario: View and Cart Brand Products
+    Given the user is on the Products page
+    When the user clicks a brand name "Polo" on sidebar
+    Then the user should be navigated to brand page
+    And correct brand products should be displayed
+    When the user selects another brand
+    Then correct products for that brand should display
+
+  Scenario: Verify Recommended Products Section
+    Given the user is on the home page
+    When the user scrolls to page bottom
+    Then "RECOMMENDED ITEMS" should be visible
+    When the user adds a recommended product to cart
+    And clicks "View Cart"
+    Then the product should be added to cart
+
+  Scenario: Verify Product Images Display Properly
+    Given the user is on the Products page
+    When the user views the product list
+    Then each product should have a visible image
+    When the user opens a product detail page
+    Then the image should load correctly with no broken links
+
+  Scenario: Verify Featured Products Section
+    Given the user is on the home page
+    When the user scrolls to the "FEATURED ITEMS" section
+    Then featured products should be displayed with images, names, and "Add to cart" buttons
+    When the user clicks "Add to cart" for one featured product
+    And clicks "View Cart" on the popup
+    Then the selected featured product should appear correctly in the cart
+
+  Scenario: Verify Product Price Currency Consistency
+    Given the user is on the home page
+    And a product "Blue Top" exists with a price
+    When the user notes the displayed price and currency
+    And opens the product details page
+    And checks displayed price
+    And adds product to cart
+    And views cart summary
+    And proceeds to checkout
+    Then the currency type and format should remain consistent across all pages
+
+  # ==================== Feature 4: Manual/UI Scenarios - Shopping Cart ====================
+
+  Scenario: Add Products in Cart
+    Given the user is on the Products page
+    When the user hovers over "Product 1"
+    And clicks "Add to Cart"
+    And clicks "Continue Shopping"
+    And adds "Product 2" to cart
+    And views cart
+    Then both products should appear with correct price, quantity, and total
+
+  Scenario: Verify Product Quantity in Cart
+    Given a product has been added to cart
+    When the user clicks "View Product"
+    And changes quantity to "4"
+    And clicks "Add to Cart"
+    And views cart
+    Then the product should appear with correct quantity "4" in cart
+
+  Scenario: Remove Products from Cart
+    Given a product has been added to cart
+    When the user clicks "Cart"
+    And clicks "X" beside the product
+    Then the product should be removed successfully from cart
+
+  Scenario: Verify Cart Page Summary
+    Given multiple products have been added to cart
+    When the user opens the Cart page
+    And checks subtotal, total, and quantity values
+    Then the cart should show accurate calculations
+
+  Scenario: Verify Re-adding Product Updates Quantity
+    Given the user is logged in or browsing as guest
+    And the cart is initially empty
+    When the user adds "Blue Top" with quantity "2" to cart
+    And adds the same product again with quantity "1"
+    And opens cart and reviews total quantity
+    Then the product should appear once in the cart
+    And total quantity should be updated to "3"
+    And total price should be recalculated correctly
+
+  # ==================== Feature 5: Manual/UI Scenarios - Checkout & Orders ====================
+
+  Scenario: Register while Checkout
+    Given the user is not logged in
+    And the website is accessible
+    And products are available in the store
+    When the user adds products to cart as guest
+    And proceeds to checkout
+    And registers during checkout process
+    And completes payment with valid card details
+    Then the system should allow the new user to register during checkout
+    And place an order successfully
+    And confirm both order placement and account deletion
+
+  Scenario: Register before Checkout
+    Given the user does not have an existing account
+    And the registration page is functional
+    When the user clicks "Signup / Login" button
+    And fills all details in Signup and creates account
+    And verifies "ACCOUNT CREATED!" message
+    And clicks Continue button
+    And adds products to cart
+    And proceeds to checkout
+    And enters payment details and completes order
+    Then the user should successfully register a new account
+    And complete checkout and payment
+    And all expected confirmation messages should be displayed correctly
+
+  Scenario: Login before Checkout
+    Given the user has a valid account
+    And the user is on the login page
+    When the user fills email and password
+    And clicks Login button
+    And verifies "Logged in as username" at top
+    And adds products to cart
+    And proceeds to checkout
+    And completes payment
+    Then the user should log in successfully
+    And complete checkout and payment
+    And verify success message
+    And be able to delete the account
+
+  Scenario: Search Products and Verify Cart After Login
+    Given the user is logged in with a valid account
+    And the website search feature is functional
+    When the user clicks on "Products" button
+    And enters product name "Dress" in search input
+    And clicks search button
+    And adds those products to cart
+    And clicks "Cart" button
+    And verifies products are visible in cart
+    Then the user should be able to search and add products to cart
+    And the same products should remain visible in cart after login
+
+  Scenario: Verify Address Details in Checkout Page
+    Given the user is logged in
+    And at least one product is added to cart
+    And the user has a saved shipping address
+    When the user proceeds to checkout
+    And verifies the delivery address
+    And verifies the billing address
+    Then the delivery address should match the address filled at registration
+    And the billing address should match the address filled at registration
+
+  Scenario: Download Invoice after Purchase Order
+    Given the user is logged in
+    And a successful purchase order exists
+    When the user completes checkout and payment
+    And clicks "Download Invoice" button
+    Then the invoice should be downloaded successfully
+    And the invoice file should contain correct order details
+
+  # ==================== Feature 6: Manual/UI Scenarios - Payment Processing ====================
+
+  Scenario: Valid 16-digit Card Number
+    Given the user is logged in
+    And at least one product is added to cart
+    And the user has reached the Payment Page
+    When the user enters valid payment details
+      | Name on Card | John Doe         |
+      | Card Number  | 2742071709845243 |
+      | CVC          | 789              |
+      | Expiry Date  | Valid future date|
+    And clicks "Pay and Confirm Order" button
+    Then success message "Your order has been placed successfully!" should be displayed
+
+  Scenario: Verify Card Number with Less Than 16 Digits
+    Given the user is logged in
+    And at least one product is added to cart
+    And the user has reached the Payment Page
+    When the user enters card number "274207170984524" with less than 16 digits
+    And enters other valid payment details
+    And clicks "Pay and Confirm Order" button
+    Then error message should appear stating "Card number must be 16 digits!"
+    And the order should not be placed
+
+  Scenario: Verify Card Number with More Than 16 Digits
+    Given the user is logged in
+    And at least one product is added to cart
+    And the user has reached the Payment Page
+    When the user enters card number "27420717098452437" with more than 16 digits
+    And enters other valid payment details
+    And clicks "Pay and Confirm Order" button
+    Then error message should appear stating "Card number must be 16 digits!"
+    And the order should not be placed
+
+  Scenario: Verify Card Has Valid Expiration Date
+    Given the user is logged in
+    And at least one product is added to cart
+    And the user has reached the Payment Page
+    When the user enters valid card number "2742071709845243"
+    And enters valid future expiration date
+    And enters other valid payment details
+    And clicks "Pay and Confirm Order" button
+    Then success message "Your order has been placed successfully!" should be displayed
+
+  Scenario: Verify Card is Expired
+    Given the user is logged in
+    And at least one product is added to cart
+    And the user has reached the Payment Page
+    When the user enters valid card number "2742071709845243"
+    And enters expired expiration date
+    And enters other valid payment details
+    And clicks "Pay and Confirm Order" button
+    Then error message "Card expired. Please use a valid card" should be displayed
+    And the order should not be placed
+
+  # ==================== Feature 7: Manual/UI Scenarios - Navigation & Contact ====================
+
+  Scenario: Verify Home Page Loads
+    Given the user has a web browser open
+    When the user enters website URL "https://automationexercise.com"
+    And observes page load
+    Then the home page should load successfully
+    And header, navigation, and footer should be visible
+
+  Scenario: Contact Us Form Submission
+    Given the user is on the Home Page
+    When the user clicks "Contact Us" link
+    Then "GET IN TOUCH" title should appear
+    When the user fills in required details
+      | Name    | John Doe           |
+      | Email   | john@example.com   |
+      | Subject | Test Subject       |
+      | Message | Test message here  |
+    And submits the form
+    And clicks "OK" on confirmation
+    Then success message should be displayed
+    And the user should be able to return to Home Page
+
+  Scenario: Verify Test Cases Page
+    Given the user is on the Home Page
+    When the user clicks "Test Cases" link
+    Then the Test Cases page should load successfully
+    And all test cases should be visible
+
+  Scenario: Verify Subscription on Home Page
+    Given the user is on the Home Page
+    When the user scrolls to subscription section
+    And enters valid email address
+    And clicks "Subscribe" button
+    Then success message should appear for subscription
+
+  Scenario: Verify Subscription on Cart Page
+    Given the user is on the Home Page
+    When the user clicks "Cart" button
+    And scrolls to subscription section
+    And enters valid email address
+    And clicks "Subscribe" button
+    Then success message should be displayed correctly
+
+  Scenario: Add Product Review
+    Given the user is on the Home Page
+    When the user clicks "Products" button
+    And clicks "View Product" for a product
+    And enters review details
+      | Name   | John Doe                    |
+      | Email  | john@example.com            |
+      | Review | Great product, highly recommend |
+    And submits the review
+    Then the review should appear on product page
+
+  Scenario: Verify Scroll Up Using Arrow Button
+    Given the user is on the Home Page
+    When the user scrolls down the page
+    Then an arrow button should appear
+    When the user clicks the arrow button
+    Then the page should scroll smoothly to top
+    When the user scrolls down again
+    Then scrolling should work in both directions
+
+  Scenario: Verify Scroll Up Without Arrow Button
+    Given the user is on the Home Page
+    When the user scrolls down the page
+    And uses mouse or touchpad to scroll up manually
+    Then manual scrolling should work smoothly in both directions
+
+  # ==================== Feature 8: API Testing Scenarios ====================
+
+  Scenario: Get All Products List
+    Given the API endpoint "https://automationexercise.com/api/productsList" is available
+    When a GET request is sent
+    Then the response code should be 200
+    And the response message should be "All products list"
+
+  Scenario: POST To All Products List - Negative Test
+    Given the API endpoint "https://automationexercise.com/api/productsList" is available
+    When a POST request is sent
+    Then the response code should be 405
+    And the response message should be "This request method is not supported."
+
+  Scenario: Get All Brands List
+    Given the API endpoint "https://automationexercise.com/api/brandsList" is available
+    When a GET request is sent
+    Then the response code should be 200
+    And the response message should be "All brands list"
+
+  Scenario: PUT To All Brands List - Negative Test
+    Given the API endpoint "https://automationexercise.com/api/brandsList" is available
+    When a PUT request is sent
+    Then the response code should be 405
+    And the response message should be "This request method is not supported."
+
+  Scenario: POST To Search Product
+    Given the API endpoint "https://automationexercise.com/api/searchProduct" is available
+    When a POST request is sent with parameter "search_product:top"
+    Then the response code should be 200
+    And the response message should be "Searched products list"
+
+  Scenario: POST To Search Product Without Parameter
+    Given the API endpoint "https://automationexercise.com/api/searchProduct" is available
+    When a POST request is sent without search_product parameter
+    Then the response code should be 400
+    And the response message should be "Bad request, search_product parameter is missing in POST request."
+
+  Scenario: Verify Login with Valid Details
+    Given the API endpoint "https://automationexercise.com/api/verifyLogin" is available
+    When a POST request is sent with valid credentials
+      | email    | menna2006@gmail.com |
+      | password | 1234@pswrd          |
+    Then the response code should be 200
+    And the response message should be "User exists!"
+
+  Scenario: Verify Login Without Email Parameter
+    Given the API endpoint "https://automationexercise.com/api/verifyLogin" is available
+    When a POST request is sent with only password "1234@pswrd"
+    Then the response code should be 400
+    And the response message should be "Bad request, email or password parameter is missing in POST request."
+
+  Scenario: DELETE To Verify Login - Negative Test
+    Given the API endpoint "https://automationexercise.com/api/verifyLogin" is available
+    When a DELETE request is sent with credentials
+      | email    | menna2006@gmail.com |
+      | password | 1234@pswrd          |
+    Then the response code should be 405
+    And the response message should be "This request method is not supported."
+
+  Scenario: Verify Login with Invalid Details
+    Given the API endpoint "https://automationexercise.com/api/verifyLogin" is available
+    When a POST request is sent with invalid credentials
+      | email    | menna2000@gmail.com |
+      | password | 1234@pasowrd        |
+    Then the response code should be 404
+    And the response message should be "User not found!"
+
+  Scenario: Delete User Account
+    Given the API endpoint "https://automationexercise.com/api/deleteAccount" is available
+    When a DELETE request is sent with valid credentials
+      | email    | menna2006@gmail.com |
+      | password | 1234@pswrd          |
+    Then the response code should be 200
+    And the response message should be "Account deleted!"
+
+  Scenario: Update User Account
+    Given the API endpoint "https://automationexercise.com/api/updateAccount" is available
+    When a PUT request is sent with updated user data
+      | name         | Menna            |
+      | email        | menna2000@gmail.com |
+      | password     | 1234@pasowrd     |
+      | title        | Mrs              |
+      | birth_date   | 5                |
+      | birth_month  | 4                |
+      | birth_year   | 2006             |
+      | firstname    | menna            |
+      | lastname     | yasser           |
+      | address1     | old cairo        |
+      | address2     | Maadi            |
+      | country      | Egypt            |
+      | zipcode      | 00               |
+      | state        | Cairo            |
+      | city         | Cairo            |
+      | mobile_number| 01151537823      |
+    Then the response code should be 200
+    And the response message should be "User updated!"
+
+  Scenario: GET User Account Detail by Email
+    Given the API endpoint "https://automationexercise.com/api/getUserDetailByEmail" is available
+    When a GET request is sent with email "menna2006@gmail.com"
+    Then the response code should be 200
+    And the response body should contain user details
+      | id         | 1044943          |
+      | name       | Menna            |
+      | email      | menna2006@gmail.com |
+      | title      | Mrs              |
+      | birth_day  | 5                |
+      | birth_month| 4                |
+      | birth_year | 2006             |
+      | first_name | menna            |
+      | last_name  | yasser           |
+      | address1   | old cairo        |
+      | address2   | maadi            |
+      | country    | egypt            |
+      | state      | cairo            |
+      | city       | cairo            |
+      | zipcode    | 00               |
+
+  # ==================== Feature 9: Database Testing - User & Admin ====================
+
+  Scenario: Verify New Customer Record Insertion Upon Registration
+    Given the database and frontend are running
+    When a new customer registers from the frontend with details
+      | firstname | Habiba              |
+      | lastname  | Darwish             |
+      | email     | newuser@gmail.com   |
+      | password  | Test@123            |
+    And the query "SELECT * FROM oc_customer WHERE email='newuser@gmail.com'" is executed
+    Then a new record with matching details should be created in oc_customer table
+    And the password should be hashed
+
+  Scenario: Validate Password is Stored in Encrypted Format
+    Given a customer account exists in oc_customer table
+    When a new customer registers via frontend with email "newuser@gmail.com"
+    And the query "SELECT password FROM oc_customer WHERE email='newuser@gmail.com'" is executed
+    Then the password value should start with "$2y$" confirming bcrypt format
+
+  Scenario: Verify Email Uniqueness Constraint for Customer Registration
+    Given the oc_customer table contains existing users
+    When a user tries to register with an email that already exists "newuser@gmail.com"
+    And the database is queried for duplicate records
+    Then registration should fail
+    And the database should not create a duplicate record
+
+  Scenario: Verify Admin Account Existence in oc_user Table
+    Given the admin portal is configured
+    When the query "SELECT * FROM oc_user WHERE username='admin'" is executed
+    Then an admin account record should exist
+    And should have encrypted password and valid status
+
+  Scenario: Verify Admin User Permissions are Correctly Assigned
+    Given admin user and oc_user_group data exist
+    When a JOIN query is executed between oc_user and oc_user_group
+    And group permissions are verified for user_group_id "1"
+    Then the admin user should be assigned to Administrator group
+    And should have full permissions
+
+  Scenario: Verify Updating Customer Data Reflects in UI
+    Given a customer exists in oc_customer table with email "newuser@gmail.com"
+    When the SQL query "UPDATE oc_customer SET firstname='UpdatedName' WHERE email='newuser@gmail.com'" is executed
+    And the frontend account page is refreshed
+    Then the updated name "UpdatedName" should appear on customer profile page immediately
+
+  Scenario: Verify Deleting Customer Removes Associated Records
+    Given a customer exists in oc_customer table with email "newuser@gmail.com"
+    When the query "DELETE FROM oc_customer WHERE email='newuser@gmail.com'" is executed
+    And dependent data is queried in tables oc_address, oc_order, oc_customer_login
+    Then the customer record should be removed
+    And related data should be removed or cascaded safely
+
+  Scenario: Verify Login Attempt for User with Valid Credentials
+    Given a valid user exists in oc_customer table
+    When the user attempts login from frontend with credentials
+      | email    | newuser@gmail.com |
+      | password | Test@123          |
+    And the database login timestamp is cross-checked
+    Then login should be successful
+    And last login timestamp should be updated in database
+
+  Scenario: Verify Login Attempt Fails for Incorrect Credentials
+    Given a user record exists in oc_customer table
+    When the user attempts login with wrong password
+      | email    | newuser@gmail.com |
+      | password | WrongPass         |
+    And the system response is observed
+    Then login should fail
+    And no database update should occur in login timestamp
+
+  Scenario: Verify Deleting Admin User is Restricted
+    Given an admin user exists with username "admin"
+    When an attempt is made to delete the admin user from database
+    And the result is observed
+    Then deletion should be restricted or require special privileges
+    And the admin dashboard should remain reachable
+
+  # ==================== Feature 10: Database Testing - Product & Order ====================
+
+  Scenario: Verify New Product Insertion in Database Tables
+    Given the tester has access to admin dashboard and database
+    When the admin logs into admin panel
+    And navigates to Products and clicks Add New Product
+    And enters product details
+      | Product Name | Test T-shirt              |
+      | Model        | T001                      |
+      | Price        | 25.00                     |
+      | Description  | High-quality cotton shirt |
+    And clicks Save
+    And queries are executed
+      | SELECT * FROM oc_product WHERE model='T001'                     |
+      | SELECT * FROM oc_product_description WHERE name='Test T-shirt'  |
+    Then a new record should be created in oc_product table with correct model, price, status
+    And a new record should be created in oc_product_description table
+    And both records should be linked by product_id
+
+  Scenario: Verify Updating Product Details Updates Database Tables
+    Given a product already exists in database with model "T001"
+    When the admin updates product details
+      | Price       | 30.00                     |
+      | Description | Premium cotton T-shirt    |
+    And verification queries are executed
+    Then oc_product.price should be updated to "30.00"
+    And oc_product_description.description should be updated to "Premium cotton T-shirt"
+
+  Scenario: Verify Deleting Product Removes Records from Database
+    Given a product with model "T001" exists in database
+    When the admin goes to Products and selects the product
+    And clicks Delete and confirms deletion
+    And the query "SELECT * FROM oc_product WHERE model='T001'" is executed
+    Then no record should exist in oc_product table
+    And no record should exist in oc_product_description table with that product ID
+
+  Scenario: Verify Products are Linked to Categories Correctly
+    Given a product "Test T-shirt" and category "cameras" exist
+    When the admin assigns the product to "Men - cameras" category in admin panel
+    And the query "SELECT * FROM oc_product_to_category WHERE product_id=<product_id>" is executed
+    Then oc_product_to_category should contain the correct product_id and category_id pair
+
+  Scenario: Verify New Order Creates Records in Order Tables
+    Given a user is logged in and has products in cart
+    When the user logs in as a customer with email "testuser@mail.com"
+    And adds "Test T-shirt" to cart
+    And proceeds to checkout
+    And confirms the order
+    And the query "SELECT * FROM oc_order WHERE customer_id=<id> ORDER BY order_id DESC" is executed
+    Then a new row should be inserted in oc_order table with status "Pending"
+    And a corresponding record should exist in oc_order_product with same order_id and correct product details
+
+  Scenario: Verify Payment Transaction is Logged Correctly
+    Given a successful order has been placed
+    When checkout is completed using a payment option
+    And the query "SELECT * FROM oc_order WHERE order_id=<recent_id>" is executed
+    Then transaction details including payment method, amount, and status should match the checkout details
+
+  Scenario: Verify Foreign Key Constraints Maintain Data Integrity
+    Given the database schema uses FK relationships between oc_product, oc_product_to_category, and oc_order_product
+    When an attempt is made to delete a product that has existing orders
+    And the database response is checked
+    Then deletion should be restricted due to foreign key constraint
+    Or cascading delete should occur based on database rules
+    And data integrity should be maintained across product, category, and order tables
