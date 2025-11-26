@@ -335,6 +335,9 @@ public class SelenuimFramework {
 
         return false; // no new file found within timeout
     }
-    
-   
+
+
+    public void executeJavaScript(String s, WebElement recommendedProduct) {
+
+    }
 }
