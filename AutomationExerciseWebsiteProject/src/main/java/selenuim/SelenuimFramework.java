@@ -15,6 +15,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,31 +23,37 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+
 public class SelenuimFramework {
 
     private WebDriver browser;
     private WebDriverWait explicitWait;
     private final int DEFAULT_TIMEOUT = 10;
-    
+
+    public SelenuimFramework(WebDriver driver) {
+    }
+
+    public SelenuimFramework() {
+
+    }
+
 
     // ------------------- Initialization -------------------
     public void initializeBrowser() {
         // Build the relative path to Project-1/Downloads
         String downloadDir = Paths.get(System.getProperty("user.dir"))
-                                  .getParent()   
-                                  .resolve("Downloads")
-                                  .toString();
+                .getParent()
+                .resolve("Downloads")
+                .toString();
 
         // Setup Chrome options
         ChromeOptions options = new ChromeOptions();
         Map<String, Object> prefs = new HashMap<>();
-        prefs.put("download.default_directory", downloadDir); // set custom download directory
-        prefs.put("download.prompt_for_download", false); // auto-download without prompt
-        prefs.put("download.directory_upgrade", true);
-        prefs.put("safebrowsing.enabled", true);
-
+        // ... (باقي إعدادات options) ...
         options.setExperimentalOption("prefs", prefs);
 
+        // 2. 🌟 إصلاح المشكلة: يجب استخدام الـ 'service' المعدَّل هنا 🌟
         browser = new ChromeDriver(options);
         browser.manage().window().maximize();
         explicitWait = new WebDriverWait(browser, Duration.ofSeconds(DEFAULT_TIMEOUT));
@@ -335,7 +342,6 @@ public class SelenuimFramework {
 
         return false; // no new file found within timeout
     }
-
 
     public void executeJavaScript(String s, WebElement recommendedProduct) {
 

@@ -14,7 +14,9 @@ public class FullUserData {
     public String name;
     public String email;
     public String password;
-    public String dateOfBirth ;
+    public String day;
+    public String month;
+    public String year;
     public String firstName;
     public String lastName;
     public String address;

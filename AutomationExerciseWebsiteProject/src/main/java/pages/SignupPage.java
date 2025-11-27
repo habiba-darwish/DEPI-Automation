@@ -59,7 +59,7 @@ public class SignupPage {
     }
     
     
-    public void sendFirstname (String Firstname){
+    public void sendFirstName (String Firstname){
         framework.sendKeys(signupFirstNameLocator, Firstname);
     }
     
