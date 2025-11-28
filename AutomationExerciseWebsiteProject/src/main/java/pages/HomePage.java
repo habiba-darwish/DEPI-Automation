@@ -207,6 +207,18 @@ public class HomePage {
       public void scrollToNav(){
           framework.scrollToElement(navLocator);
       }
-       
+
+    /**
+     * Gets the product name for recommended product 5
+     * @return the name of recommended product 5
+     */
+    public String getRecommendedProduct5Name() {
+        WebElement product5Button = framework.findElement(product5RecommendedProductAddToCartButtonLocator);
+        WebElement productContainer = product5Button.findElement(By.xpath("./ancestor::div[contains(@class,'productinfo')]"));
+        WebElement productNameElement = productContainer.findElement(By.cssSelector("p"));
+        return productNameElement.getText().trim();
+    }
+
+
   
 }

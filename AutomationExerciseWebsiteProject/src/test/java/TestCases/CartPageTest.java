@@ -1,5 +1,7 @@
 package TestCases;
 
+import Helper.HelperClass;
+import Helper.Product;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -12,6 +14,8 @@ import pages.AllProductsPage;
 import pages.FirstProductPage;
 import selenuim.SelenuimFramework;
 import io.qameta.allure.*;
+
+import java.io.FileNotFoundException;
 import java.util.List;
 
 
@@ -42,34 +46,73 @@ public class CartPageTest {
         framework.closeBrowser();
     }
 
-    @Test
-    @Story("Verify Products in Cart")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Validate that added products are correctly displayed in cart")
-    public void TC12_VerifyProductsInCart() {
-        // Add products to cart first
-        homePage.clickHomeButton();
-        homePage.scrollToViewFirstProductAddToCartButton();
-        homePage.clickFirstProductAddToCartButton();
-        homePage.clickContinueShoppingButton();
-        homePage.clickSecondProductAddToCartButton();
-        homePage.clickViewCartButton();
+@Test
+@Story("Verify Products in Cart")
+@Severity(SeverityLevel.CRITICAL)
+@Description("Validate that added products are correctly displayed in cart")
+public void TC12_VerifyProductsInCart() {
+    // Step 1-3: Verify home page
+    Assert.assertTrue(homePage.getHomePageTitle().contains("Automation Exercise"),
+            "Home page should be visible");
 
-        // Verify cart page is displayed
-        String cartText = cartPage.getShoppingCartText();
-        Assert.assertTrue(cartText.contains("Shopping Cart"),
-                "Cart page not displayed");
+    // Step 4: Navigate to products page
+    homePage.clickProductsButton();
+    Assert.assertTrue(allProductsPage.getAllProductsText().contains("ALL PRODUCTS"),
+            "Should be on products page");
+
+    // Get first two products directly from page
+    List<WebElement> allProducts = allProductsPage.getAllProductElements();
+    Assert.assertTrue(allProducts.size() >= 2, "Should have at least 2 products on page");
+
+    String firstProductName = allProducts.get(0).findElement(By.cssSelector("p")).getText().trim();
+    String secondProductName = allProducts.get(1).findElement(By.cssSelector("p")).getText().trim();
+
+    System.out.println("Adding first two products from page:");
+    System.out.println("  - " + firstProductName);
+    System.out.println("  - " + secondProductName);
+
+    // Add products to cart
+    homePage.scrollToViewFirstProductAddToCartButton();
+    homePage.clickFirstProductAddToCartButton();
+    homePage.clickContinueShoppingButton();
+    homePage.clickSecondProductAddToCartButton();
+    homePage.clickViewCartButton();
+
+    // Verify cart
+    verifyCartHasValidTwoProducts(firstProductName, secondProductName);
+}
+
+    private void verifyCartHasValidTwoProducts(String firstProductName, String secondProductName) {
+        // Verify cart page
+        Assert.assertTrue(cartPage.getShoppingCartText().contains("Cart"), "Should be on cart page");
+        Assert.assertEquals(cartPage.getNumberOfItemsInCart(), 2, "Should have 2 products in cart");
+
+        // Get cart data
+        List<String> cartNames = cartPage.getCartProductNames();
+        List<Double> cartPrices = cartPage.getProductPrices();
+        List<Integer> cartQuantities = cartPage.getProductQuantities();
+        List<Double> cartTotals = cartPage.getProductTotals();
+
+        System.out.println("Products in cart: " + cartNames);
 
         // Verify both products are in cart
-        int numberOfItems = cartPage.getNumberOfItemsInCart();
-        Assert.assertEquals(numberOfItems, 2,
-                "Number of items in cart doesn't match");
+        Assert.assertTrue(cartNames.contains(firstProductName),
+                "First product '" + firstProductName + "' should be in cart");
+        Assert.assertTrue(cartNames.contains(secondProductName),
+                "Second product '" + secondProductName + "' should be in cart");
 
-        // Verify product details
-        List<String> productNames = cartPage.getCartProductNames();
-        Assert.assertTrue(productNames.size() >= 2,
-                "Not enough products in cart");
+        // Verify all cart items have valid data
+        for (int i = 0; i < cartNames.size(); i++) {
+            Assert.assertTrue(cartPrices.get(i) > 0, "Price should be positive for: " + cartNames.get(i));
+            Assert.assertEquals(cartQuantities.get(i), Integer.valueOf(1),
+                    "Quantity should be 1 for: " + cartNames.get(i));
+
+            double expectedTotal = cartPrices.get(i) * cartQuantities.get(i);
+            Assert.assertEquals(cartTotals.get(i), expectedTotal,
+                    "Total should equal price * quantity for: " + cartNames.get(i));
+        }
     }
+
 
     @Test
     @Story("Verify Product Quantity in Cart")
@@ -95,221 +138,73 @@ public class CartPageTest {
                 "Product with quantity 4 not found in cart");
     }
 
+
     @Test
     @Story("Remove Products from Cart")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Validate that user can remove products from cart")
     public void TC17_RemoveProductsFromCart() {
-        try {
-            // Ensure cart has products first - add a product directly
-            homePage.clickHomeButton();
-            homePage.scrollToViewFirstProductAddToCartButton();
-            homePage.clickFirstProductAddToCartButton();
-            homePage.clickViewCartButton();
+        homePage.clickHomeButton();
+        homePage.scrollToViewFirstProductAddToCartButton();
+        homePage.clickFirstProductAddToCartButton();
+        homePage.clickViewCartButton();
 
-            // Get initial number of items
-            int initialItemCount = cartPage.getNumberOfItemsInCart();
-            System.out.println("Initial items in cart: " + initialItemCount);
+        String cartText = cartPage.getShoppingCartText();
+        Assert.assertTrue(cartText.contains("Cart"), "Should be on cart page");
 
-            if (initialItemCount == 0) {
-                // If cart is empty, add a product first
-                homePage.clickHomeButton();
-                homePage.scrollToViewFirstProductAddToCartButton();
-                homePage.clickFirstProductAddToCartButton();
-                homePage.clickViewCartButton();
-                initialItemCount = cartPage.getNumberOfItemsInCart();
-            }
+        int initialItemCount = cartPage.getNumberOfItemsInCart();
+        List<String> initialProductNames = cartPage.getCartProductNames();
 
-            Assert.assertTrue(initialItemCount > 0,
-                    "No products in cart to remove. Initial count: " + initialItemCount);
+        Assert.assertEquals(initialItemCount, 1, "Should have 1 products in cart");
 
-            // Store product names before removal
-            List<String> initialProductNames = cartPage.getCartProductNames();
-            System.out.println("Products before removal: " + initialProductNames);
+        String firstProductName = initialProductNames.get(0);
 
-            // Click 'X' button to remove first product
-            cartPage.clickXButtonForFirstProductButton();
+        cartPage.clickXButtonForFirstProductButton();
 
-            // Wait for product to be removed with explicit wait
-            try {
-                Thread.sleep(2000); // Wait for removal to process
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
+        cartPage.waitForProductToBeRemoved();
 
-            // Refresh page to ensure cart is updated
-            framework.refreshPage();
+        int finalItemCount = cartPage.getNumberOfItemsInCart();
+        List<String> finalProductNames = cartPage.getCartProductNames();
 
-            // Verify that product is removed from the cart
-            int finalItemCount = cartPage.getNumberOfItemsInCart();
-            System.out.println("Final items in cart: " + finalItemCount);
-
-            // Allow for the possibility that there might be other items in cart
-            Assert.assertTrue(finalItemCount < initialItemCount,
-                    "Product was not removed from cart. Initial: " + initialItemCount + ", Final: " + finalItemCount);
-
-        } catch (Exception e) {
-            Assert.fail("Test TC17 failed with exception: " + e.getMessage());
-        }
+        Assert.assertEquals(finalItemCount, initialItemCount - 1,
+                "Item count should decrease by 1 after removal");
+        Assert.assertFalse(finalProductNames.contains(firstProductName),
+                "Removed product should not be in cart");
+        Assert.assertEquals(finalProductNames.size(), 0,
+                "Should have 1 product remaining in cart");
     }
 
 
     @Test
     @Story("Recommended Items in Cart")
     @Severity(SeverityLevel.MINOR)
-    @Description("Verify that a user can add a product from the 'Recommended Items' section to the cart and that it is displayed correctly.")
+    @Description("Verify user can add recommended product to cart.")
     public void AddToCartFromRecommendedItems_TC22() {
-        try {
+        // Navigate to home page
+        homePage.clickHomeButton();
 
-            this.homePage.clickHomeButton();
+        // Scroll to recommended items section
+        homePage.scrollToViewRecommendedItemsText();
 
+        // Verify recommended items section is visible
+        String recommendedText = homePage.getRecommendedItemsText();
+        Assert.assertTrue(recommendedText.contains("RECOMMENDED ITEMS"),
+                "Recommended items section should be visible");
 
-            this.homePage.scrollToViewRecommendedItemsText();
+        // Scroll to section for better visibility
+        homePage.scrollToViewRecommendedItemsSection();
 
+        // Get product name before adding to cart
+        String productName = homePage.getRecommendedProduct5Name();
 
-            String ExpectedRecommendedItemsText = "RECOMMENDED ITEMS";
-            String ActualRecommendedItemsText = this.homePage.getRecommendedItemsText();
-            Assert.assertTrue(ActualRecommendedItemsText.contains(ExpectedRecommendedItemsText),
-                    ActualRecommendedItemsText + " Should Have Contained " + ExpectedRecommendedItemsText);
+        // Add product to cart
+        homePage.clickProduct5InRecommendedProductAddToCartButton();
+        homePage.clickViewCartButton();
 
-
-            debugRecommendedItemsDetails();
-
-
-            this.homePage.scrollToViewRecommendedItemsSection();
-
-
-            String productName = getRecommendedProduct5Name();
-            Assert.assertNotNull(productName, "Could not find product name for recommended product 5");
-            System.out.println("Product name to be added: " + productName);
-
-            this.homePage.clickProduct5InRecommendedProductAddToCartButton();
-
-            handleCartModalAfterAdd();
-
-            this.homePage.clickViewCartButton();
-
-            Thread.sleep(3000);
-
-            List<String> names = this.cartPage.getCartProductNames();
-            System.out.println("Products in cart: " + names);
-
-            Assert.assertFalse(names.isEmpty(), "Cart is empty");
-            Assert.assertEquals(names.get(0), productName, "Recommended item is not in cart");
-
-            System.out.println("SUCCESS: Recommended product '" + productName + "' was added to cart successfully!");
-
-        } catch (Exception e) {
-            Assert.fail("Test TC22 failed with exception: " + e.getMessage());
-        }
-    }
-
-    private String getRecommendedProduct5Name() {
-        try {
-            By product5NameLocator = By.xpath("//div[@class='recommended_items']//a[@data-product-id='5']/ancestor::div[contains(@class,'productinfo')]//p");
-            WebElement productNameElement = framework.findElement(product5NameLocator);
-            return productNameElement.getText().trim();
-        } catch (Exception e) {
-            System.out.println("Could not find product name using precise locator: " + e.getMessage());
-
-            try {
-                By anyProductNameLocator = By.cssSelector("div.recommended_items div.productinfo p");
-                List<WebElement> productNames = framework.findElements(anyProductNameLocator);
-                if (!productNames.isEmpty()) {
-                    System.out.println("Found " + productNames.size() + " product names in recommended items");
-                    for (int i = 0; i < productNames.size(); i++) {
-                        System.out.println("Product " + i + ": " + productNames.get(i).getText());
-                    }
-                    return productNames.get(0).getText().trim(); // Return first product name
-                }
-            } catch (Exception e2) {
-                System.out.println("Fallback also failed: " + e2.getMessage());
-            }
-
-            return "Recommended Product"; // Default fallback
-        }
-    }
-
-    private void handleCartModalAfterAdd() {
-        try {
-            System.out.println("Handling cart modal after adding product...");
-
-            Thread.sleep(2000);
-
-            By viewCartModalButton = By.cssSelector("div.modal-dialog a[href='/view_cart']");
-            By continueShoppingButton = By.cssSelector("div.modal-dialog button.btn-success");
-
-            try {
-                WebElement viewCartBtn = framework.findElement(viewCartModalButton);
-                if (viewCartBtn.isDisplayed()) {
-                    System.out.println("Found View Cart button in modal, clicking it");
-                    framework.executeJavaScript("arguments[0].click();", viewCartBtn);
-                    return;
-                }
-            } catch (Exception e) {
-                System.out.println("View Cart button not found in modal: " + e.getMessage());
-            }
-
-            try {
-                WebElement continueBtn = framework.findElement(continueShoppingButton);
-                if (continueBtn.isDisplayed()) {
-                    System.out.println("Found Continue Shopping button, clicking it");
-                    framework.executeJavaScript("arguments[0].click();", continueBtn);
-                    Thread.sleep(1000);
-                }
-            } catch (Exception e) {
-                System.out.println("Continue Shopping button also not found: " + e.getMessage());
-            }
-
-            Thread.sleep(2000);
-
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-    }
-
-    private void debugRecommendedItemsDetails() {
-        try {
-            System.out.println("=== DEBUG RECOMMENDED ITEMS ===");
-
-            By recommendedProducts = By.cssSelector("div.recommended_items div.productinfo");
-            List<WebElement> products = framework.findElements(recommendedProducts);
-            System.out.println("Total recommended products found: " + products.size());
-
-            for (int i = 0; i < products.size(); i++) {
-                WebElement product = products.get(i);
-                try {
-                    WebElement nameElement = product.findElement(By.cssSelector("p"));
-                    String productName = nameElement.getText();
-
-                    WebElement addToCartBtn = product.findElement(By.cssSelector("a.add-to-cart"));
-                    String productId = addToCartBtn.getAttribute("data-product-id");
-                    String buttonText = addToCartBtn.getText();
-
-                    System.out.println("Product " + i + ":");
-                    System.out.println("  Name: " + productName);
-                    System.out.println("  Product ID: " + productId);
-                    System.out.println("  Button Text: " + buttonText);
-                    System.out.println("  Displayed: " + addToCartBtn.isDisplayed());
-                    System.out.println("  Enabled: " + addToCartBtn.isEnabled());
-
-                } catch (Exception e) {
-                    System.out.println("Error inspecting product " + i + ": " + e.getMessage());
-                }
-            }
-
-            By product5Button = By.cssSelector("div.recommended_items a[data-product-id='5']");
-            try {
-                WebElement p5Button = framework.findElement(product5Button);
-                System.out.println("Product 5 button found: " + p5Button.isDisplayed());
-            } catch (Exception e) {
-                System.out.println("Product 5 button NOT found: " + e.getMessage());
-            }
-
-            System.out.println("=================================");
-
-        } catch (Exception e) {
-            System.out.println("Debug failed: " + e.getMessage());
-        }
+        // Verify the specific product was added to cart
+        List<String> cartProducts = cartPage.getCartProductNames();
+        Assert.assertFalse(cartProducts.isEmpty(), "Cart should not be empty");
+        Assert.assertEquals(cartProducts.get(0), productName,
+                "The product in cart should match the added recommended product");
     }
 }
