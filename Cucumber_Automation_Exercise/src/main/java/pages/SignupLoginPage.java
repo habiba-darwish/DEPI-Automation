@@ -18,7 +18,7 @@ public class SignupLoginPage {
     private final By passwordLocator = By.cssSelector("input[data-qa='login-password']");
     private final By loginButtonLocator = By.cssSelector("button[data-qa='login-button']");
     private final By loginToYourAccountTextLocator = By.cssSelector("div.login-form > h2");
-    private final By incorrectLoginTextLocator = By.cssSelector("div.login-form form p");
+    private final By incorrectLoginTextLocator = By.xpath("//div[@class='login-form']//p[contains(text(), 'Your email or password is incorrect!')]");
     private final By newUserSignupLocator = By.cssSelector("div.signup-form h2");
     private final By signupNameLocator = By.cssSelector("input[data-qa=\"signup-name\"]");
     private final By signupEmailLocator = By.cssSelector("input[data-qa=\"signup-email\"]");

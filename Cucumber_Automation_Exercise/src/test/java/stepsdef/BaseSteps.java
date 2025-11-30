@@ -1,31 +1,18 @@
 package stepsdef;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import org.testng.Assert;
 import pages.HomePage;
 import selenuim.SelenuimFramework;
 
 public class BaseSteps {
-    private final SelenuimFramework framework;
-    private final HomePage homePage;
+    // جعل المتغيرات protected لتسهيل الوصول إليها من الـ Steps الأخرى (إذا أردتِ استخدام الوراثة مرة أخرى).
+    protected SelenuimFramework framework;
+    protected HomePage homePage;
 
     public BaseSteps() {
+        // الـ TestContext أصبح الآن مُهيأ ويتم سحب الكائنات منه.
         this.framework = TestContext.getFramework();
         this.homePage = TestContext.getHomePage();
     }
 
-    @Given("I am on the home page")
-    public void iAmOnTheHomePage() {
-        // Already handled in hooks
-    }
-
-    @Given("I verify home page is displayed")
-    public void iVerifyHomePageIsDisplayed() {
-        String actualTitle = homePage.getHomePageTitle();
-        Assert.assertTrue(actualTitle.contains("Automation Exercise"),
-                "Home page should be visible");
-    }
-
-
+    // لا يوجد أي دوال عليها @Given أو @When أو @Then هنا.
 }

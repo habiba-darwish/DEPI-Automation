@@ -1,168 +1,178 @@
 package stepsdef;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.en.*;
 import org.testng.Assert;
-import Helper.HelperClass;
-import Helper.FullUserData;
-import Helper.RegisteredUser;
-import Helper.User;
-import pages.HomePage;
-import pages.SignupLoginPage;
-import pages.SignupPage;
-/**
- * Step Definitions for User Authentication and Account Management (TC1-TC5).
- */
-public class UserAuthSteps extends BaseSteps {
+import Helper.*;
+import pages.*;
+
+public class UserAuthSteps {
 
     private FullUserData newUser;
     private RegisteredUser existingUser;
     private User invalidCredentials;
 
-    // Constructor required by Cucumber
-    public UserAuthSteps(TestContext context) {
-        super(context);
+    public UserAuthSteps() {
+        // No inheritance, no super()
     }
 
-
     @Given("The user is on the Home Page")
-    public void user_is_on_the_home_page() {
-        context.getFramework().navigateToURL("https://automationexercise.com/");
-        String actualTitle = context.getHomePage().getPageTitle();
-        Assert.assertTrue(actualTitle.contains("Automation Exercise"), "Navigation to Home Page failed.");
+    public void the_user_is_on_the_home_page() {
+        TestContext.getFramework().navigateToURL("https://automationexercise.com/");
+        String actualTitle = TestContext.getHomePage().getHomePageTitle();
+        Assert.assertTrue(actualTitle.contains("Automation Exercise"));
+    }
+
+    @When("User clicks {string} button after account creation")
+    public void user_clicks_continue_button_after_account_creation(String buttonName) {
+        if (buttonName.equals("Continue")) {
+            TestContext.getSignupPage().clickContinueButton();
+        }
     }
 
     @When("User clicks {string} button")
     public void user_clicks_button(String buttonName) {
-        HomePage homePage = context.getHomePage();
-        SignupLoginPage signupLoginPage = context.getSignupLoginPage();
-
         if (buttonName.equals("Signup / Login")) {
-            homePage.clickSignupLoginButton();
+            TestContext.getHomePage().clickSignupLoginButton();
         } else if (buttonName.equals("Signup")) {
-            signupLoginPage.clickSignupButton();
+            TestContext.getSignupLoginPage().clickSignupButton();
         } else if (buttonName.equals("Logout")) {
-            homePage.clicklogoutButton();
+            TestContext.getHomePage().clicklogoutButton();
         } else if (buttonName.equals("Delete Account")) {
-            homePage.clickDeleteAccountButton();
+            TestContext.getHomePage().clickDeleteAccountButton();
         }
     }
 
-    // --- DATA LOADING STEPS ---
+    @Then("User sees {string} confirmation page")
+    public void user_sees_account_created_confirmation_page(String expectedText) {
+        // Wait for the page to load completely
+        TestContext.getSignupPage().waitForAccountCreatedPage();
+        String actualText = TestContext.getSignupPage().getAccountCreatedText();
+        Assert.assertEquals(actualText, expectedText);
+    }
 
-    @When("User provides new name and email for registration from {string}")
+    @And("User provides new name and email for registration from {string}")
     public void user_provides_new_name_and_email_for_registration(String fileName) throws Exception {
         newUser = HelperClass.ReadFullUser(fileName)[0];
-
         String uniqueEmail = "syada" + System.currentTimeMillis() + "@test.com";
 
-        context.getSignupLoginPage().sendSignupName(newUser.firstName + " " + newUser.lastName);
-        context.getSignupLoginPage().sendSignupEmail(uniqueEmail);
+        TestContext.getSignupLoginPage().sendSignupName(newUser.firstName + " " + newUser.lastName);
+        TestContext.getSignupLoginPage().sendSignupEmail(uniqueEmail);
 
         newUser.email = uniqueEmail;
     }
 
-    @When("User provides existing user data from {string} for registration")
-    public void user_provides_existing_user_data_for_registration(String fileName) throws Exception {
-        existingUser = HelperClass.ReadRegisteredUsers(fileName)[0];
-        context.getSignupLoginPage().sendSignupName(existingUser.name);
-        context.getSignupLoginPage().sendSignupEmail(existingUser.email);
-    }
-
-    // --- REGISTRATION ACTIONS (TC1) ---
-
     @Then("User is navigated to {string} page")
     public void user_is_navigated_to_page(String expectedText) {
-        SignupPage signupPage = context.getSignupPage();
-        String actualText = signupPage.getEnterAccountInformationText();
-        Assert.assertEquals(actualText, expectedText, "Navigation to Account Info page failed.");
+        String actualText = TestContext.getSignupPage().getEnterAccountInformationText();
+        Assert.assertEquals(actualText, expectedText);
     }
 
-    @When("User fills mandatory account details from {string} and clicks Create Account")
-    public void user_fills_mandatory_account_details_and_clicks_create_account(String fileName) {
-        SignupPage signupPage = context.getSignupPage();
 
+    @When("User fills mandatory account details from {string} and clicks Create Account")
+    public void user_fills_mandatory_account_details_from_and_clicks_create_account(String fileName) {
+        SignupPage signupPage = TestContext.getSignupPage();
+
+        // Fill all required fields
         signupPage.selectSignupRadioButtonTitleMr();
         signupPage.sendPassword(newUser.password);
         signupPage.selectDateOfBirthDay(newUser.day);
         signupPage.selectDateOfBirthMonth(newUser.month);
         signupPage.selectDateOfBirthYear(newUser.year);
-
+        signupPage.checkSignupForNewsletterCheckBox();
         signupPage.sendFirstName(newUser.firstName);
         signupPage.sendLastName(newUser.lastName);
+        signupPage.sendCompany("Test Company");
         signupPage.sendAddress(newUser.address);
+        signupPage.sendAddress2("Apt 1");
         signupPage.selectCountry(newUser.country);
+        signupPage.waitForStateFieldToBeClickable();
+        signupPage.sendState("California");
+        signupPage.sendCity("Los Angeles");
+        signupPage.sendZipcode("90001");
         signupPage.sendMobileNumber(newUser.mobileNumber);
 
+        // Scroll and click
+        signupPage.scrollToCreateAccountButton();
+        signupPage.waitHelper();
+
         signupPage.clickCreateAccountButton();
+
+        // 💡 إضافة انتظار مؤقت لمنع الإغلاق الفوري والتحقق اليدوي
+        try {
+            Thread.sleep(10000); // إيقاف التنفيذ لمدة 10 ثواني (يمكنك زيادتها)
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        // 💡 لا يتم وضع أي كود طباعة للـ debug هنا، يجب وضعه في Step Definition منفصلة
     }
-
-    // --- LOGIN VALID/INVALID STEPS (TC2, TC3) ---
-
-    @When("User logs in with valid credentials from {string}")
-    public void user_logs_in_with_valid_credentials_from(String fileName) throws Exception {
-        existingUser = HelperClass.ReadRegisteredUsers(fileName)[0];
-        context.getSignupLoginPage().sendLoginEmail(existingUser.email);
-        context.getSignupLoginPage().sendLoginPassword(existingUser.password);
-        context.getSignupLoginPage().clickLoginButton();
-    }
-
-    @When("User attempts to log in with invalid credentials from {string}")
-    public void user_attempts_to_log_in_with_invalid_credentials_from(String fileName) throws Exception {
-        invalidCredentials = HelperClass.ReadUsers(fileName)[0];
-        context.getSignupLoginPage().sendLoginEmail(invalidCredentials.email);
-        context.getSignupLoginPage().sendLoginPassword(invalidCredentials.password);
-        context.getSignupLoginPage().clickLoginButton();
-    }
-
-    // --- VERIFICATION STEPS ---
-
     @Then("User is successfully logged in as the new user from {string}")
-    public void user_is_successfully_logged_in_as_new_user(String fileName) {
-        HomePage homePage = context.getHomePage();
-        String expectedUserName = "Logged in as " + newUser.firstName;
-        Assert.assertTrue(homePage.getLoggedInText().contains(expectedUserName),
-                "TC1: User was not logged in after registration.");
-    }
-
-    @Then("User is successfully logged in as the existing user from {string}")
-    public void user_is_successfully_logged_in_as_existing_user(String fileName) {
-        HomePage homePage = context.getHomePage();
-        String expectedUserName = "Logged in as " + existingUser.name;
-        Assert.assertTrue(homePage.getLoggedInText().contains(expectedUserName),
-                "TC2: User was not logged in.");
-    }
-
-    @Then("User is redirected to the Login page")
-    public void user_is_redirected_to_the_login_page() {
-        SignupLoginPage signupLoginPage = context.getSignupLoginPage();
-        String actualText = signupLoginPage.getLoginToYourAccountText();
-        Assert.assertTrue(actualText.contains("Login to your account"), "User was not redirected after logout.");
-    }
-
-    @Then("User sees the error message {string}")
-    public void user_sees_the_error_message(String expectedErrorMessage) {
-        SignupLoginPage signupLoginPage = context.getSignupLoginPage();
-        String actualErrorMessage = signupLoginPage.getSignupErrorMessageText();
-        Assert.assertTrue(actualErrorMessage.contains(expectedErrorMessage),
-                "Error message mismatch.");
+    public void user_is_successfully_logged_in_as_the_new_user_from(String fileName) {
+        String expectedUserName = "Logged in as " + newUser.firstName + " " + newUser.lastName;
+        Assert.assertTrue(TestContext.getHomePage().getLoggedInText().contains(expectedUserName));
     }
 
     @Then("User sees {string} confirmation message")
     public void user_sees_confirmation_message(String expectedMessage) {
-        HomePage homePage = context.getHomePage();
-        String actualMessage = homePage.getDeletedAccountText();
-        Assert.assertTrue(actualMessage.contains(expectedMessage), "Account deletion confirmation failed.");
+        Assert.assertTrue(TestContext.getHomePage().getDeletedAccountText().contains(expectedMessage));
     }
 
-    // --- PRE-CONDITIONS (For TC4) ---
+    @And("User provides existing user data from {string} for registration")
+    public void user_provides_existing_user_data_from_for_registration(String fileName) throws Exception {
+        existingUser = HelperClass.ReadRegisteredUsers(fileName)[0];
+        TestContext.getSignupLoginPage().sendSignupName(existingUser.name);
+        TestContext.getSignupLoginPage().sendSignupEmail(existingUser.email);
+    }
+
+    @Then("User sees the error message {string}")
+    public void user_sees_the_error_message(String expectedErrorMessage) {
+        String actualErrorMessage;
+
+        if (expectedErrorMessage.contains("Email Address already exist!")) {
+            actualErrorMessage = TestContext.getSignupLoginPage().getSignupErrorMessageText();
+        } else if (expectedErrorMessage.contains("Your email or password is incorrect!")) {
+            actualErrorMessage = TestContext.getSignupLoginPage().getIncorrectLoginText();
+        } else {
+            throw new IllegalArgumentException("Unknown error message expected: " + expectedErrorMessage);
+        }
+
+        Assert.assertTrue(actualErrorMessage.contains(expectedErrorMessage),
+                "Expected error: '" + expectedErrorMessage + "' but found: '" + actualErrorMessage + "'");
+    }
+
+    @And("User logs in with valid credentials from {string}")
+    public void user_logs_in_with_valid_credentials_from(String fileName) throws Exception {
+        existingUser = HelperClass.ReadRegisteredUsers(fileName)[0];
+        TestContext.getSignupLoginPage().sendLoginEmail(existingUser.email);
+        TestContext.getSignupLoginPage().sendLoginPassword(existingUser.password);
+        TestContext.getSignupLoginPage().clickLoginButton();
+    }
+
+    @Then("User is successfully logged in as the existing user from {string}")
+    public void user_is_successfully_logged_in_as_the_existing_user_from(String fileName) {
+        String expectedUserName = "Logged in as " + existingUser.name;
+        Assert.assertTrue(TestContext.getHomePage().getLoggedInText().contains(expectedUserName));
+    }
 
     @Given("User is already logged in with valid credentials from {string}")
     public void user_is_already_logged_in_with_valid_credentials_from(String fileName) throws Exception {
-        user_is_on_the_home_page();
+        the_user_is_on_the_home_page();
         user_clicks_button("Signup / Login");
         user_logs_in_with_valid_credentials_from(fileName);
-        user_is_successfully_logged_in_as_existing_user(fileName);
+        user_is_successfully_logged_in_as_the_existing_user_from(fileName);
+    }
+
+    @Then("User is redirected to the Login page")
+    public void user_is_redirected_to_the_login_page() {
+        String actualText = TestContext.getSignupLoginPage().getLoginToYourAccountText();
+        Assert.assertTrue(actualText.contains("Login to your account"));
+    }
+
+    @And("User attempts to log in with invalid credentials from {string}")
+    public void user_attempts_to_log_in_with_invalid_credentials_from(String fileName) throws Exception {
+        invalidCredentials = HelperClass.ReadUsers(fileName)[0];
+        TestContext.getSignupLoginPage().sendLoginEmail(invalidCredentials.email);
+        TestContext.getSignupLoginPage().sendLoginPassword(invalidCredentials.password);
+        TestContext.getSignupLoginPage().clickLoginButton();
     }
 }

@@ -1,0 +1,22 @@
+[
+    {
+    "title": "Mr.",
+    "name": "John Doe",
+    "email": "johndoe7513@gmail.com",
+    "password": "SecurePass123!",
+    "day": "15",
+    "month": "May",
+    "year": "1990",
+    "firstName": "John",
+    "lastName": "Doe",
+    "company": "Tech Solutions Ltd.",
+    "address": "123 Main Street",
+    "address2": "Apartment 4B",
+    "country": "India",
+    "state": "California",
+    "city": "Los Angeles",
+    "zipcode": "90001",
+    "mobileNumber": "01092585774"
+  }
+
+]

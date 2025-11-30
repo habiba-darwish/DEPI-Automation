@@ -33,6 +33,10 @@ public class SelenuimFramework {
 
     }
 
+    // 🔥 ADD THIS METHOD - Get WebDriver instance
+    public WebDriver getDriver() {
+        return browser;
+    }
 
     // ------------------- Initialization -------------------
     public void initializeBrowser() {
