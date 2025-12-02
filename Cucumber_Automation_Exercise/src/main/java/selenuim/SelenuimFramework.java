@@ -1,4 +1,3 @@
-
 package selenuim;
 
 import org.openqa.selenium.Alert;
@@ -12,13 +11,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.NoSuchElementException;
 
 import java.io.File;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-
 
 public class SelenuimFramework {
 
@@ -27,38 +26,32 @@ public class SelenuimFramework {
     private final int DEFAULT_TIMEOUT = 10;
 
     public SelenuimFramework(WebDriver driver) {
+        this.browser = driver;
+        this.explicitWait = new WebDriverWait(browser, Duration.ofSeconds(DEFAULT_TIMEOUT));
     }
 
-    public SelenuimFramework() {
+    public SelenuimFramework() { }
 
-    }
-
-    // 🔥 ADD THIS METHOD - Get WebDriver instance
     public WebDriver getDriver() {
         return browser;
     }
 
     // ------------------- Initialization -------------------
     public void initializeBrowser() {
-        // Build the relative path to Project-1/Downloads
         String downloadDir = Paths.get(System.getProperty("user.dir"))
                 .getParent()
                 .resolve("Downloads")
                 .toString();
 
-        // Setup Chrome options
         ChromeOptions options = new ChromeOptions();
         Map<String, Object> prefs = new HashMap<>();
-        // ... (باقي إعدادات options) ...
         options.setExperimentalOption("prefs", prefs);
 
-        // 2. 🌟 إصلاح المشكلة: يجب استخدام الـ 'service' المعدَّل هنا 🌟
         browser = new ChromeDriver(options);
         browser.manage().window().maximize();
         explicitWait = new WebDriverWait(browser, Duration.ofSeconds(DEFAULT_TIMEOUT));
         System.out.println("Browser initialized and maximized with download dir: " + downloadDir);
     }
-
 
     public void closeBrowser() {
         if (browser != null) {
@@ -76,10 +69,9 @@ public class SelenuimFramework {
     public WebElement findElement(By locator) {
         return explicitWait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
-    
+
     public List<WebElement> findElements(By locator) {
-        List<WebElement> elements = browser.findElements(locator);
-        return elements;
+        return browser.findElements(locator);
     }
 
     private WebElement waitUntilClickable(By locator, int timeoutSeconds) {
@@ -149,10 +141,19 @@ public class SelenuimFramework {
     }
 
     public void sendKeys(By locator, String text) {
-        WebElement element = waitUntilClickable(locator, DEFAULT_TIMEOUT);
+        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        WebElement element = browser.findElement(locator);
         element.clear();
         element.sendKeys(text);
         System.out.println("Sent keys to element: " + locator + " | Value: " + text);
+    }
+
+    public void clearAndSendKeys(By locator, String text) {
+        WebElement element = browser.findElement(locator);
+        element.clear();
+        element.sendKeys(text);
+        System.out.println("Cleared and sent keys to element: " + locator + " | Value: " + text);
     }
 
     public String getText(By locator) {
@@ -203,8 +204,6 @@ public class SelenuimFramework {
         if (!element.isSelected()) {
             element.click();
             System.out.println("Checked checkbox: " + locator);
-        } else {
-            System.out.println("Checkbox already checked: " + locator);
         }
     }
 
@@ -213,8 +212,6 @@ public class SelenuimFramework {
         if (element.isSelected()) {
             element.click();
             System.out.println("Unchecked checkbox: " + locator);
-        } else {
-            System.out.println("Checkbox already unchecked: " + locator);
         }
     }
 
@@ -223,8 +220,6 @@ public class SelenuimFramework {
         if (!element.isSelected()) {
             element.click();
             System.out.println("Selected radio button: " + locator);
-        } else {
-            System.out.println("Radio button already selected: " + locator);
         }
     }
 
@@ -282,67 +277,49 @@ public class SelenuimFramework {
         alert.accept();
         System.out.println("Sent text to alert and accepted: " + text);
     }
-    
-    public boolean isDisplayed(By locator){
-       return browser.findElement(locator).isDisplayed();
+
+    // ------------------- Utility -------------------
+    public boolean isDisplayed(By locator) {
+        try {
+            return browser.findElement(locator).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
-    
-    public void clearAndSendKeys(By locator,String text ){
-        WebElement element = browser.findElement(locator);
-        element.clear();
-        element.sendKeys(text);
-        
-    
+
+    public void waitForElementToBeInvisible(By locator) {
+        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
-    
-    public void hoverOnElement(By locator) {
-        WebElement hoverElement = findElement(locator);
-        createAction().moveToElement(hoverElement).perform();
-    }
-    
-    
-    public void waitForElementToBeInvesible(By locator){
-         WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
-         wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
-    }
-    
-    
+
     public boolean waitForFile(String downloadDir, String fileExtension, int timeoutSeconds) {
         File dir = new File(downloadDir);
         long endTime = System.currentTimeMillis() + (timeoutSeconds * 1000);
 
         while (System.currentTimeMillis() < endTime) {
             File[] files = dir.listFiles((d, name) -> name.toLowerCase().endsWith(fileExtension));
-
             if (files != null && files.length > 0) {
-                // Find the most recently modified file
                 File latestFile = Arrays.stream(files)
-                                        .max((f1, f2) -> Long.compare(f1.lastModified(), f2.lastModified()))
-                                        .orElse(null);
+                        .max(Comparator.comparingLong(File::lastModified))
+                        .orElse(null);
 
-                if (latestFile != null) {
-                    long lastModified = latestFile.lastModified();
-                    long now = System.currentTimeMillis();
-
-                    // Check if file was modified (downloaded) within the last few seconds
-                    if ((now - lastModified) <= (timeoutSeconds * 1000)) {
-                        return true;
-                    }
+                if (latestFile != null && (System.currentTimeMillis() - latestFile.lastModified()) <= (timeoutSeconds * 1000)) {
+                    return true;
                 }
             }
-
             try {
-                TimeUnit.SECONDS.sleep(1); // wait 1 sec before checking again
+                TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 return false;
             }
         }
-
-        return false; // no new file found within timeout
+        return false;
     }
 
-    public void executeJavaScript(String s, WebElement recommendedProduct) {
-
+    public void hoverOnElement(By locator) {
+        WebElement element = findElement(locator);
+        createAction().moveToElement(element).perform();
     }
+
 }

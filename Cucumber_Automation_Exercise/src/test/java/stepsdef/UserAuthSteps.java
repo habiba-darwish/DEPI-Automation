@@ -44,15 +44,16 @@ public class UserAuthSteps {
 
     @Then("User sees {string} confirmation page")
     public void user_sees_account_created_confirmation_page(String expectedText) {
-        // Wait for the page to load completely
+        // The wait is now robustly handled inside the page object using the correct locator
         TestContext.getSignupPage().waitForAccountCreatedPage();
         String actualText = TestContext.getSignupPage().getAccountCreatedText();
-        Assert.assertEquals(actualText, expectedText);
+        Assert.assertEquals(actualText.trim(), expectedText, "Account creation confirmation message mismatch.");
     }
 
     @And("User provides new name and email for registration from {string}")
     public void user_provides_new_name_and_email_for_registration(String fileName) throws Exception {
         newUser = HelperClass.ReadFullUser(fileName)[0];
+        // Ensure email is unique using a timestamp
         String uniqueEmail = "syada" + System.currentTimeMillis() + "@test.com";
 
         TestContext.getSignupLoginPage().sendSignupName(newUser.firstName + " " + newUser.lastName);
@@ -85,11 +86,12 @@ public class UserAuthSteps {
         signupPage.sendAddress(newUser.address);
         signupPage.sendAddress2("Apt 1");
         signupPage.selectCountry(newUser.country);
-        signupPage.waitForStateFieldToBeClickable();
-        signupPage.sendState("California");
-        signupPage.sendCity("Los Angeles");
-        signupPage.sendZipcode("90001");
+//        signupPage.waitForStateFieldToBeClickable();
+        signupPage.sendState(newUser.state);
+        signupPage.sendCity(newUser.city);
+        signupPage.sendZipcode(newUser.zipcode);
         signupPage.sendMobileNumber(newUser.mobileNumber);
+
 
         // Scroll and click
         signupPage.scrollToCreateAccountButton();
@@ -97,15 +99,8 @@ public class UserAuthSteps {
 
         signupPage.clickCreateAccountButton();
 
-        // 💡 إضافة انتظار مؤقت لمنع الإغلاق الفوري والتحقق اليدوي
-        try {
-            Thread.sleep(10000); // إيقاف التنفيذ لمدة 10 ثواني (يمكنك زيادتها)
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-
-        // 💡 لا يتم وضع أي كود طباعة للـ debug هنا، يجب وضعه في Step Definition منفصلة
     }
+
     @Then("User is successfully logged in as the new user from {string}")
     public void user_is_successfully_logged_in_as_the_new_user_from(String fileName) {
         String expectedUserName = "Logged in as " + newUser.firstName + " " + newUser.lastName;

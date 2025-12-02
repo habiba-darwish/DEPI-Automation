@@ -2,8 +2,7 @@ package stepsdef;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import io.cucumber.java.en.Given;
 import org.testng.Assert;
 import pages.CartPage;
 import pages.FirstProductPage;
@@ -13,6 +12,7 @@ import pages.AllProductsPage;
 import java.util.List;
 
 public class CartSteps {
+
     private final HomePage homePage;
     private final CartPage cartPage;
     private final FirstProductPage firstProductPage;
@@ -25,6 +25,16 @@ public class CartSteps {
         this.firstProductPage = TestContext.getFirstProductPage();
         this.allProductsPage = TestContext.getAllProductsPage();
     }
+
+    // -------------------- MISSING STEP FIX --------------------
+    @Given("I am on the home page")
+    public void i_am_on_the_home_page() {
+        homePage.navigateToHomePage();
+        String actualTitle = homePage.getHomePageTitle();
+        Assert.assertTrue(actualTitle.contains("Automation Exercise"),
+                "Home page title mismatch. Actual: " + actualTitle);
+    }
+
     @When("I navigate to products page")
     public void iNavigateToProductsPage() {
         homePage.clickProductsButton();
@@ -58,8 +68,7 @@ public class CartSteps {
     @Then("cart page should be displayed")
     public void cartPageShouldBeDisplayed() {
         String cartText = cartPage.getShoppingCartText();
-        Assert.assertTrue(cartText.contains("Cart"),
-                "Cart page should be displayed");
+        Assert.assertTrue(cartText.contains("Cart"), "Cart page should be displayed");
     }
 
     @Then("cart should contain {int} products")
@@ -71,7 +80,6 @@ public class CartSteps {
 
     @Then("product prices and totals should be correct")
     public void productPricesAndTotalsShouldBeCorrect() {
-
         List<Double> prices = cartPage.getProductPrices();
         List<Integer> quantities = cartPage.getProductQuantities();
         List<Double> totals = cartPage.getProductTotals();

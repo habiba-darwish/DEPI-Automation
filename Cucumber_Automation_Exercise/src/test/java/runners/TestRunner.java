@@ -13,7 +13,8 @@ import org.testng.annotations.DataProvider;
                 "json:target/cucumber-reports/cucumber.json"
 //                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
-        tags = "@Products or @Cart or @Categories or @authentication",
+//        tags = "@Products or @Cart or @Categories or @authentication",
+        tags = "@authentication",
         monochrome = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {

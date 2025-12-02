@@ -8,180 +8,78 @@ import java.time.Duration;
 
 public class SignupPage {
 
-    // Locators
-    private final By radioButtonTitleMrLocator = By.cssSelector("input#id_gender1");
-    private final By radioButtonTitleMrsLocator = By.cssSelector("input#id_gender2");
-    private final By nameLocator = By.cssSelector("input#name");
-    private final By emailLocator = By.cssSelector("input#email");
-    private final By passwordLocator = By.cssSelector("input#password");
-    private final By firstNameLocator = By.cssSelector("input#first_name");
-    private final By lastNameLocator = By.cssSelector("input#last_name");
-    private final By dateOfBirthDayLocator = By.cssSelector("select#days");
-    private final By dateOfBirthMonthLocator = By.cssSelector("select#months");
-    private final By dateOfBirthYearLocator = By.cssSelector("select#years");
-    private final By enterAccountInformationTextLocator = By.cssSelector("h2.title b");
-    private final By forNewsletterCheckBoxLocator = By.cssSelector("input#newsletter");
-    private final By receiveSpecialOffersCheckBoxLocator = By.cssSelector("input#optin");
-    private final By companyLocator = By.cssSelector("input#company");
-    private final By address1Locator = By.cssSelector("input#address1");
-    private final By address2Locator = By.cssSelector("input#address2");
-    private final By countryLocator = By.cssSelector("select#country");
-    private final By stateLocator = By.cssSelector("input#state");
-    private final By cityLocator = By.cssSelector("input#city");
-    private final By zipcodeLocator = By.cssSelector("input#zipcode");
-    private final By mobileNumberLocator = By.cssSelector("input#mobile_number");
-    private final By createAccountButtonLocator = By.cssSelector("button[data-qa=\"create-account\"]");
-    private final By accountCreatedTextLocator = By.cssSelector("h2.title b");
-    private final By continueButtonLocator = By.cssSelector("a[data-qa=\"continue-button\"]");
-    private final By subscriptionAdTextLocator = By.cssSelector("div.col-sm-3.col-sm-offset-1 p");
-
     private final SelenuimFramework framework;
 
     public SignupPage(SelenuimFramework framework) {
         this.framework = framework;
     }
 
-    // Actions
-    public void sendName(String name) {
-        framework.sendKeys(nameLocator, name);
-    }
+    // ------------------- Locators -------------------
+    private final By radioButtonTitleMr = By.cssSelector("input#id_gender1");
+    private final By radioButtonTitleMrs = By.cssSelector("input#id_gender2");
+    private final By nameField = By.cssSelector("input#name");
+    private final By emailField = By.cssSelector("input#email");
+    private final By passwordField = By.cssSelector("input#password");
+    private final By firstNameField = By.cssSelector("input#first_name");
+    private final By lastNameField = By.cssSelector("input#last_name");
+    private final By newsletterCheckbox = By.cssSelector("input#newsletter");
+    private final By specialOffersCheckbox = By.cssSelector("input#optin");
+    private final By companyField = By.cssSelector("input#company");
+    private final By address1Field = By.cssSelector("input#address1");
+    private final By address2Field = By.cssSelector("input#address2");
+    private final By countryDropdown = By.cssSelector("select#country");
+    private final By stateField = By.cssSelector("input#state");
+    private final By cityField = By.cssSelector("input#city");
+    private final By zipcodeField = By.cssSelector("input#zipcode");
+    private final By mobileNumberField = By.cssSelector("input#mobile_number");
+    private final By createAccountButton = By.cssSelector("button[data-qa='create-account']");
+    private final By continueButton = By.cssSelector("a[data-qa='continue-button']");
+    private final By accountCreatedHeader = By.cssSelector("h2[data-qa='account-created']");
+    private final By enterAccountInformationText = By.cssSelector("h2.title b");
+    private final By dateOfBirthDay = By.cssSelector("select#days");
+    private final By dateOfBirthMonth = By.cssSelector("select#months");
+    private final By dateOfBirthYear = By.cssSelector("select#years");
 
-    public void sendEmail(String email) {
-        framework.sendKeys(emailLocator, email);
-    }
+    // ------------------- Actions -------------------
+    public void sendName(String name) { framework.sendKeys(nameField, name); }
+    public void sendEmail(String email) { framework.sendKeys(emailField, email); }
+    public void sendPassword(String password) { framework.sendKeys(passwordField, password); }
+    public void sendFirstName(String firstName) { framework.sendKeys(firstNameField, firstName); }
+    public void sendLastName(String lastName) { framework.sendKeys(lastNameField, lastName); }
+    public void sendCompany(String company) { framework.sendKeys(companyField, company); }
+    public void sendAddress(String address) { framework.sendKeys(address1Field, address); }
+    public void sendAddress2(String address2) { framework.sendKeys(address2Field, address2); }
+    public void selectCountry(String country) { framework.selectDropdownByVisibleText(countryDropdown, country); }
+    public void sendState(String state) { framework.sendKeys(stateField, state); }
+    public void sendCity(String city) { framework.sendKeys(cityField, city); }
+    public void sendZipcode(String zipcode) { framework.sendKeys(zipcodeField, zipcode); }
+    public void sendMobileNumber(String mobileNumber) { framework.sendKeys(mobileNumberField, mobileNumber); }
+    public void clickCreateAccountButton() { framework.click(createAccountButton); }
+    public void clickContinueButton() { framework.click(continueButton); }
 
-    public void sendPassword(String password) {
-        framework.sendKeys(passwordLocator, password);
-    }
+    public String getAccountCreatedText() { return framework.getText(accountCreatedHeader); }
+    public String getEnterAccountInformationText() { return framework.getText(enterAccountInformationText); }
 
-    public void sendFirstName(String firstname) {
-        framework.sendKeys(firstNameLocator, firstname);
-    }
+    public void checkSignupForNewsletterCheckBox() { framework.checkCheckbox(newsletterCheckbox); }
+    public void checkReceiveSpecialOffersCheckBox() { framework.checkCheckbox(specialOffersCheckbox); }
+    public void selectSignupRadioButtonTitleMr() { framework.selectRadioButton(radioButtonTitleMr); }
+    public void selectSignupRadioButtonTitleMrs() { framework.selectRadioButton(radioButtonTitleMrs); }
+    public void selectDateOfBirthDay(String day) { framework.selectDropdownByVisibleText(dateOfBirthDay, day); }
+    public void selectDateOfBirthMonth(String month) { framework.selectDropdownByVisibleText(dateOfBirthMonth, month); }
+    public void selectDateOfBirthYear(String year) { framework.selectDropdownByVisibleText(dateOfBirthYear, year); }
 
-    public void sendLastName(String lastName) {
-        framework.sendKeys(lastNameLocator, lastName);
-    }
-
-    public void sendCompany(String company) {
-        framework.sendKeys(companyLocator, company);
-    }
-
-    public void sendAddress(String address) {
-        framework.sendKeys(address1Locator, address);
-    }
-
-    public void sendAddress2(String address2) {
-        framework.sendKeys(address2Locator, address2);
-    }
-
-    public void selectCountry(String country) {
-        framework.selectDropdownByVisibleText(countryLocator, country);
-    }
-
-    public void sendState(String state) {
-        framework.sendKeys(stateLocator, state);
-    }
-
-    public void sendCity(String city) {
-        framework.sendKeys(cityLocator, city);
-    }
-
-    public void sendZipcode(String zipcode) {
-        framework.sendKeys(zipcodeLocator, zipcode);
-    }
-
-    public void sendMobileNumber(String mobileNumber) {
-        framework.sendKeys(mobileNumberLocator, mobileNumber);
-    }
-
-    public void clickCreateAccountButton() {
-        framework.click(createAccountButtonLocator);
-    }
-
-    public void clickContinueButton() {
-        framework.click(continueButtonLocator);
-    }
-
-    public String getAccountCreatedText() {
-        return framework.getText(accountCreatedTextLocator);
-    }
-
-    public String getEnterAccountInformationText() {
-        return framework.getText(enterAccountInformationTextLocator);
-    }
-
-    public void checkSignupForNewsletterCheckBox() {
-        framework.checkCheckbox(forNewsletterCheckBoxLocator);
-    }
-
-    public void checkReceiveSpecialOffersCheckBox() {
-        framework.checkCheckbox(receiveSpecialOffersCheckBoxLocator);
-    }
-
-    public void selectSignupRadioButtonTitleMr() {
-        framework.selectRadioButton(radioButtonTitleMrLocator);
-    }
-
-    public void selectSignupRadioButtonTitleMrs() {
-        framework.selectRadioButton(radioButtonTitleMrsLocator);
-    }
-
-    public void selectDateOfBirthDay(String day) {
-        framework.selectDropdownByVisibleText(dateOfBirthDayLocator, day);
-    }
-
-    public void selectDateOfBirthMonth(String month) {
-        framework.selectDropdownByVisibleText(dateOfBirthMonthLocator, month);
-    }
-
-    public void selectDateOfBirthYear(String year) {
-        framework.selectDropdownByVisibleText(dateOfBirthYearLocator, year);
-    }
-
-    public void scrollToAddress2() {
-        framework.scrollToElement(address2Locator);
-    }
-
-    public void scrollToCreateAccountButton() {
-        framework.scrollToElement(createAccountButtonLocator);
-    }
-
-    public void scrollToSubscriptionAdText() {
-        framework.scrollToElement(subscriptionAdTextLocator);
-    }
-
-    public void waitHelper() {
-        framework.implicitWait(15);
-    }
-
-    // NEW METHOD: Wait for account created page
     public void waitForAccountCreatedPage() {
-        try {
-            // 🔥 FIXED: Now using framework.getDriver() instead of framework.getDriver()
-            WebDriverWait wait = new WebDriverWait(framework.getDriver(), Duration.ofSeconds(15));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(accountCreatedTextLocator));
-            System.out.println("Successfully navigated to account created page");
-        } catch (Exception e) {
-            System.out.println("Failed to navigate to account created page: " + e.getMessage());
-            // Check if we're still on the form page
-            if (isElementVisible(enterAccountInformationTextLocator)) {
-                System.out.println("Still on account information page - creation likely failed");
-            }
-            throw new RuntimeException("Account creation failed - could not reach success page");
-        }
+        new WebDriverWait(framework.getDriver(), Duration.ofSeconds(15))
+                .until(ExpectedConditions.textToBePresentInElementLocated(accountCreatedHeader, "ACCOUNT CREATED!"));
     }
 
-    // NEW METHOD: Check if element is visible
-    public boolean isElementVisible(By locator) {
-        try {
-            // 🔥 FIXED: Now using framework.getDriver()
-            return framework.getDriver().findElement(locator).isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
-    }
+    public boolean isElementVisible(By locator) { return framework.isDisplayed(locator); }
+
+    public void scrollToCreateAccountButton() { framework.scrollToElement(createAccountButton); }
+    public void waitHelper() { framework.implicitWait(15); }
+
     public void waitForStateFieldToBeClickable() {
-        WebDriverWait wait = new WebDriverWait(framework.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(stateLocator));
+        new WebDriverWait(framework.getDriver(), Duration.ofSeconds(10))
+                .until(ExpectedConditions.elementToBeClickable(stateField));
     }
 }
